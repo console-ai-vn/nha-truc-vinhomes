@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "test": "vitest run"
   },
   "dependencies": {
     "@vercel/analytics": "latest",
@@ -21,6 +22,8 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "typescript": "latest"
+    "@vitejs/plugin-react": "^6.0.2",
+    "typescript": "latest",
+    "vitest": "^4.1.7"
   }
 }
