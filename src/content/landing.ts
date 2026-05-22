@@ -11,8 +11,8 @@ export const landingContent = {
   },
 
   hero: {
-    headline: "Sẵn sàng cho một sự nghiệp tài chính thực thụ tại SSI",
-    subheadline: "Gia nhập đội ngũ tư vấn chứng khoán do Giám đốc Trần Thị Thùy Dương dẫn dắt — phát triển khách hàng, xây dựng thương hiệu cá nhân và tạo thu nhập bền vững trong ngành tài chính.",
+    headline: "Gia nhập đội ngũ Tư vấn Chứng khoán do Top KOL SSI dẫn dắt",
+    subheadline: "Trần Thị Thùy Dương — 10 năm kinh nghiệm, Giám đốc Tư vấn Chứng khoán 09, KOL xuất sắc nhất SSI 2025. Sẵn sàng chia sẻ lộ trình và đào tạo thế hệ tư vấn viên tiếp theo.",
     portraitAlt: "Trần Thị Thùy Dương — Giám đốc Tư vấn Chứng khoán SSI",
     cta: "Nhận lộ trình ứng tuyển",
     ctaSecondary: "Nhắn Zalo tư vấn",
