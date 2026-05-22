@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const csrfCookie = request.cookies.get("__Host-csrf")?.value ?? null;
+    const csrfCookie = request.cookies.get("csrf-token")?.value ?? null;
     const csrfHeader = request.headers.get("x-csrf-token");
     if (!validateCsrfToken(csrfHeader, csrfCookie)) {
       return NextResponse.json(

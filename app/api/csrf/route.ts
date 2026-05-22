@@ -5,11 +5,11 @@ export async function GET() {
   const token = generateCsrfToken();
 
   const response = NextResponse.json({ token });
-  response.cookies.set("__Host-csrf", token, {
+  response.cookies.set("csrf-token", token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
-    sameSite: "strict",
-    path: "/api",
+    sameSite: "lax",
+    path: "/",
     maxAge: CSRFTokenTTL
   });
 
