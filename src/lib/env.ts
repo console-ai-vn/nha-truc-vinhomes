@@ -1,16 +1,17 @@
 export function getGoogleSheetsEnv() {
-  const env = {
-    clientEmail: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-    privateKeyFile: process.env.GOOGLE_PRIVATE_KEY_FILE,
-    sheetId: process.env.GOOGLE_SHEET_ID
-  };
+  const clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
+  const sheetId = process.env.GOOGLE_SHEET_ID;
+  const hasKey = !!(process.env.GOOGLE_PRIVATE_KEY_FILE || process.env.GOOGLE_PRIVATE_KEY);
 
-  const missing = Object.entries(env)
-    .filter(([, value]) => !value)
-    .map(([key]) => key);
+  const missing: string[] = [];
+  if (!clientEmail) missing.push("clientEmail");
+  if (!hasKey) missing.push("privateKey");
+  if (!sheetId) missing.push("sheetId");
 
   return {
-    ...env,
+    clientEmail: clientEmail ?? "",
+    privateKeyFile: process.env.GOOGLE_PRIVATE_KEY_FILE ?? "",
+    sheetId: sheetId ?? "",
     configured: missing.length === 0,
     missing
   };
