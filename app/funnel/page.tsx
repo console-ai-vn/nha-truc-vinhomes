@@ -53,7 +53,7 @@ export default function FunnelPage() {
           Dành cho nhà đầu tư
         </p>
         <h1 style={{
-          fontFamily: "'Playfair Display', Georgia, serif",
+          fontFamily: "'Inter', system-ui, sans-serif",
           fontSize: "clamp(36px, 6vw, 64px)", fontWeight: 900,
           lineHeight: 1.05, color: "var(--ink)", maxWidth: 700, margin: "0 auto"
         }}>
