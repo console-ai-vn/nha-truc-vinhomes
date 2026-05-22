@@ -43,7 +43,7 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-grid">
           <div className="hero-copy">
-            <p className="hero-eyebrow">Giám đốc Tư vấn Chứng khoán — 10 năm tại SSI</p>
+            <p className="hero-eyebrow">Giám đốc Tư vấn Chứng khoán 09 — Hội sở SSI</p>
             <h1>{hero.headline}</h1>
             <p className="hero-lead">{hero.subheadline}</p>
             <div className="hero-badge">
