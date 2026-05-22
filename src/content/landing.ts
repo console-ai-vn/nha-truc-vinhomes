@@ -29,8 +29,8 @@ export const landingContent = {
 
   proofs: [
     {
-      title: "Tròn 10 năm gắn bó cùng SSI",
-      text: "Không chỉ là một cột mốc — là cả một hành trình trưởng thành. Nhận ESOP và cương vị mới, sẵn sàng cho chặng đường tiếp theo cùng đội ngũ.",
+      title: "Tròn 10 năm — Bổ nhiệm Giám đốc 2026",
+      text: "Từ Tư vấn viên đến Giám đốc Tư vấn Chứng khoán 09. Nhận ESOP và chính thức được bổ nhiệm Giám đốc, sẵn sàng cho chặng đường tiếp theo cùng đội ngũ.",
       image: "/assets/selected/proof-kol-2025.jpg",
       alt: "SSI Retail Awards 2025 certificate"
     },
@@ -130,10 +130,10 @@ export const landingContent = {
 
   achievements: [
     { year: "2016", title: "Gia nhập SSI", text: "Bắt đầu sự nghiệp tư vấn chứng khoán tại SSI Hội sở." },
-    { year: "2020", title: "Giám đốc Tư vấn", text: "Được bổ nhiệm vị trí Giám đốc Tư vấn Chứng khoán, bắt đầu xây dựng đội ngũ riêng." },
+    { year: "2020", title: "Trưởng phòng Tư vấn", text: "Được bổ nhiệm vị trí Trưởng phòng Tư vấn Chứng khoán, bắt đầu xây dựng đội ngũ riêng." },
     { year: "2024", title: "Retail Awards", text: "Được SSI vinh danh vì thành tích tăng trưởng vượt trội trong hoạt động tư vấn." },
     { year: "2025", title: "KOL xuất sắc + ESOP", text: "Đạt danh hiệu KOL xuất sắc nhất năm — nhận cổ phiếu ESOP ghi nhận đóng góp. 150+ phiên livestream." },
-    { year: "2026", title: "Cương vị mới — Mở rộng đội ngũ", text: "Nhận cương vị mới, tiếp tục mở rộng phòng TVCK 09. Tuyển dụng thế hệ tư vấn viên tiếp theo." }
+    { year: "2026", title: "Bổ nhiệm Giám đốc — Mở rộng đội ngũ", text: "Chính thức được bổ nhiệm Giám đốc Tư vấn Chứng khoán 09. Tiếp tục mở rộng phòng, tuyển dụng thế hệ tư vấn viên tiếp theo." }
   ],
 
   training: [
