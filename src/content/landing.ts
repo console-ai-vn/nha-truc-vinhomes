@@ -9,60 +9,123 @@ export const landingContent = {
     email: "duongttt@ssi.com.vn",
     phone: "0933153333"
   },
+
+  hero: {
+    headline: "Sẵn sàng cho một sự nghiệp tài chính thực thụ tại SSI",
+    subheadline: "Gia nhập đội ngũ tư vấn chứng khoán do Giám đốc Trần Thị Thùy Dương dẫn dắt — phát triển khách hàng, xây dựng thương hiệu cá nhân và tạo thu nhập bền vững trong ngành tài chính.",
+    portraitAlt: "Trần Thị Thùy Dương — Giám đốc Tư vấn Chứng khoán SSI",
+    cta: "Nhận lộ trình ứng tuyển",
+    ctaSecondary: "Nhắn Zalo tư vấn",
+    badge: "KOL xuất sắc SSI Retail Awards 2025"
+  },
+
   stats: [
-    { value: "10 nam", label: "dong hanh cung thi truong" },
-    { value: "SSI", label: "Hoi so 03 / TVCK 09" },
-    { value: "2025", label: "KOL xuat sac Retail Awards" },
-    { value: "2024", label: "Retail Awards ghi nhan thanh tich" },
-    { value: "HS09", label: "xay dung doi ngu tu van" }
+    { value: "10 năm", label: "Kinh nghiệm thị trường" },
+    { value: "SSI", label: "Hội sở 03 / TVCK 09" },
+    { value: "2025", label: "KOL xuất sắc Retail Awards" },
+    { value: "2024", label: "Retail Awards ghi nhận" },
+    { value: "HS09", label: "Xây dựng đội ngũ tư vấn" }
   ],
+
   proofs: [
     {
-      title: "KOL xuat sac 2025",
-      text: "Ghi nhan tu SSI Retail Awards cho hoat dong thuong hieu ca nhan va dong gop trong chuong trinh Diem Tin Sang.",
+      title: "KOL xuất sắc 2025",
+      text: "Ghi nhận từ SSI Retail Awards cho hoạt động thương hiệu cá nhân và đóng góp trong chương trình Điểm Tin Sáng.",
       image: "/assets/selected/proof-kol-2025.jpg",
       alt: "SSI Retail Awards 2025 certificate"
     },
     {
-      title: "Thanh tich Retail Awards 2024",
-      text: "Bang vinh danh cho cac chi so tang truong trong hoat dong tu van chung khoan tai Hoi so.",
+      title: "Thành tích Retail Awards 2024",
+      text: "Bằng vinh danh cho các chỉ số tăng trưởng trong hoạt động tư vấn chứng khoán tại Hội sở.",
       image: "/assets/selected/proof-retail-awards-2024.jpg",
       alt: "Retail Awards 2024 certificates"
     },
     {
-      title: "Lanh dao co dau an ca nhan",
-      text: "Hinh anh vinh danh truong phong moi gioi xuat sac chi nhanh 2025, cho thay nang luc dan doi va tao ket qua.",
+      title: "Lãnh đạo có dấu ấn cá nhân",
+      text: "Hình ảnh vinh danh trưởng phòng môi giới xuất sắc chi nhánh 2025 — minh chứng năng lực dẫn dắt và tạo kết quả.",
       image: "/assets/selected/proof-branch-award-2025.jpg",
-      alt: "Tran Thi Thuy Duong branch recognition"
+      alt: "Trần Thị Thùy Dương branch recognition"
     }
   ],
+
+  benefits: [
+    {
+      title: "Hệ thống đào tạo bài bản",
+      text: "Lộ trình từ FA/TA cơ bản đến kỹ năng tư vấn và phát triển khách hàng. Đào tạo 1:1 cùng đội ngũ giàu kinh nghiệm."
+    },
+    {
+      title: "Thương hiệu SSI — uy tín 25 năm",
+      text: "Làm việc tại công ty chứng khoán hàng đầu Việt Nam. Tận dụng hệ sinh thái khách hàng và công cụ chuyên nghiệp."
+    },
+    {
+      title: "Thu nhập không giới hạn",
+      text: "Cơ chế hoa hồng cạnh tranh + thưởng hiệu quả. Bạn quyết định mức thu nhập của chính mình."
+    },
+    {
+      title: "Hỗ trợ xây dựng thương hiệu cá nhân",
+      text: "Hướng dẫn phát triển kênh Facebook, TikTok, Zalo. Xây dựng uy tín và thu hút khách hàng tự nhiên."
+    },
+    {
+      title: "Cơ hội thăng tiến rõ ràng",
+      text: "Lộ trình từ Thực tập sinh → Tư vấn viên → Trưởng nhóm → Quản lý đội ngũ. Hỗ trợ lấy chứng chỉ hành nghề."
+    },
+    {
+      title: "Văn hóa team trẻ, năng động",
+      text: "Môi trường làm việc tích cực, chia sẻ kiến thức hàng ngày. Không áp lực doanh số độc hại — phát triển bền vững."
+    }
+  ],
+
   roles: [
     {
-      title: "Tu van chung khoan",
-      text: "Phu hop nguoi muon phat trien nghe tai chinh, ban hang tu van va cham soc khach hang dau tu.",
+      title: "Tư vấn chứng khoán",
+      text: "Phù hợp người muốn phát triển nghề tài chính, bán hàng tư vấn và chăm sóc khách hàng đầu tư.",
       icon: BriefcaseBusiness
     },
     {
-      title: "Hoc viec / thuc tap sinh",
-      text: "Bat dau tu nen tang FA, TA, quy trinh tu van va cach xay dung thuong hieu ca nhan.",
+      title: "Học việc / Thực tập sinh",
+      text: "Bắt đầu từ nền tảng FA, TA, quy trình tư vấn và cách xây dựng thương hiệu cá nhân.",
       icon: GraduationCap
     },
     {
-      title: "CTV / xay team rieng",
-      text: "Mo rong mang luoi khach hang va nhan su theo co che duoc xac nhan truc tiep voi doi ngu.",
+      title: "CTV / Xây team riêng",
+      text: "Mở rộng mạng lưới khách hàng và nhân sự theo cơ chế được xác nhận trực tiếp với đội ngũ.",
       icon: Network
     },
     {
-      title: "Dinh huong leader",
-      text: "Danh cho nguoi da co kinh nghiem sales, tai chinh hoac quan ly nhom va muon tang toc.",
+      title: "Định hướng Leader",
+      text: "Dành cho người đã có kinh nghiệm sales, tài chính hoặc quản lý nhóm và muốn tăng tốc.",
       icon: Award
     }
   ],
+
   training: [
-    "Phan tich co ban, phan tich ky thuat va nhan dinh thi truong.",
-    "Ky nang tu van, ban hang va quan tri moi quan he khach hang.",
-    "Phat trien khach hang qua Facebook, TikTok, Zalo va cong dong.",
-    "Xay dung thuong hieu ca nhan theo cach co ky luat, dung quy dinh.",
-    "Dao tao nguoi moi va mo rong doi ngu CTV khi du nang luc."
+    "Phân tích cơ bản (FA) — đọc báo cáo tài chính, định giá doanh nghiệp.",
+    "Phân tích kỹ thuật (TA) — biểu đồ, chỉ báo, điểm mua/bán.",
+    "Kỹ năng tư vấn & chăm sóc khách hàng đầu tư.",
+    "Xây dựng thương hiệu cá nhân trên Facebook, TikTok, Zalo.",
+    "Quy trình mở tài khoản & giao dịch trên nền tảng SSI iBoard."
+  ],
+
+  faq: [
+    {
+      question: "Tôi chưa biết gì về chứng khoán, có tham gia được không?",
+      answer: "Hoàn toàn được. Chúng tôi có lộ trình đào tạo từ số 0 — từ kiến thức cơ bản về thị trường, phân tích kỹ thuật, đến kỹ năng tư vấn khách hàng. Bạn chỉ cần tinh thần học hỏi và kỷ luật."
+    },
+    {
+      question: "Cần bằng cấp gì để làm tư vấn chứng khoán?",
+      answer: "Bạn cần có chứng chỉ hành nghề tư vấn chứng khoán do UBCKNN cấp. Nếu chưa có, đội ngũ sẽ hướng dẫn bạn ôn thi và đăng ký. Thời gian chuẩn bị khoảng 2-3 tháng."
+    },
+    {
+      question: "Thu nhập trung bình của tư vấn viên là bao nhiêu?",
+      answer: "Thu nhập đến từ hoa hồng môi giới + thưởng hiệu quả, không có trần. Người mới thường đạt 15-25 triệu/tháng sau 3-6 tháng. Người có kinh nghiệm và khách hàng ổn định có thể đạt 50-100 triệu/tháng hoặc hơn."
+    },
+    {
+      question: "Thời gian làm việc như thế nào?",
+      answer: "Giờ hành chính từ thứ 2 đến thứ 6, theo giờ giao dịch của sàn chứng khoán (9:00-15:00). Ngoài giờ, bạn chủ động phát triển khách hàng và học tập theo lịch cá nhân."
+    },
+    {
+      question: "Tôi đang đi làm có tham gia bán thời gian được không?",
+      answer: "Có. Bạn có thể bắt đầu với vai trò CTV/cộng tác viên, làm việc linh hoạt theo thời gian rảnh. Khi đã có khách hàng ổn định và thu nhập tốt, bạn có thể chuyển sang toàn thời gian."
+    }
   ]
 };

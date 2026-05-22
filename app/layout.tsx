@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://thuy-duong-invest.vercel.app"),
   title: "Thuy Duong Invest | SSI Recruitment",
   description:
-    "Gia nhap doi ngu tu van chung khoan SSI Hoi so cung Giam doc Tu van Chung khoan 09 Tran Thi Thuy Duong.",
+    "Gia nhập đội ngũ tư vấn chứng khoán SSI Hội sở cùng Giám đốc Tư vấn Chứng khoán 09 Trần Thị Thùy Dương.",
   openGraph: {
-    title: "Thuy Duong Invest | SSI Recruitment",
+    title: "Thùy Dương Invest | SSI Recruitment",
     description:
-      "Landing tuyen dung cho doi ngu tu van chung khoan SSI Hoi so 2026.",
+      "Landing tuyển dụng cho đội ngũ tư vấn chứng khoán SSI Hội sở 2026.",
     images: ["/assets/selected/hero-portrait.png"]
   }
 };

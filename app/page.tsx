@@ -23,14 +23,11 @@ import { LeadForm } from "@/src/components/landing/LeadForm";
 import { landingContent } from "@/src/content/landing";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  BriefcaseBusiness,
-  GraduationCap,
-  Network,
-  Award
+  BriefcaseBusiness, GraduationCap, Network, Award
 };
 
 export default function Home() {
-  const { links } = landingContent;
+  const { links, hero } = landingContent;
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -41,73 +38,58 @@ export default function Home() {
 
   return (
     <main>
-      {/* ── Navigation ────────────────────────── */}
-      <nav className={`nav${scrolled ? " scrolled" : ""}`} aria-label="Primary">
+      {/* ── Nav ─────────────────────────── */}
+      <nav className={`nav${scrolled ? " scrolled" : ""}`} aria-label="Chính">
         <a className="brand" href="#top">
           <span className="brand-mark">TD</span>
-          <strong>Thuy Duong Invest</strong>
+          <strong>Thùy Dương Invest</strong>
         </a>
         <div className="nav-links">
-          <a href="#proof">Uy tin</a>
-          <a href="#opportunity">Co hoi</a>
-          <a href="#apply" className="nav-cta">Ung tuyen</a>
+          <a href="#why">Lợi ích</a>
+          <a href="#proof">Uy tín</a>
+          <a href="#opportunity">Cơ hội</a>
+          <a href="#faq">FAQ</a>
+          <a href="#apply" className="nav-cta">Ứng tuyển</a>
         </div>
       </nav>
 
-      {/* ── Hero ──────────────────────────────── */}
+      {/* ── Hero ─────────────────────────── */}
       <section className="hero" id="top">
         <div className="hero-grid">
           <div className="hero-copy">
-            <p className="hero-eyebrow">SSI Recruitment 2026</p>
-            <h1>
-              Gia nhap <em>doi ngu</em> tu van chung khoan SSI Hoi so
-            </h1>
-            <p className="hero-lead">
-              Cung Giam doc Tran Thi Thuy Duong xay dung su nghiep tai chinh,
-              phat trien khach hang va mo rong thu nhap trong nganh chung khoan.
-            </p>
+            <p className="hero-eyebrow">Tuyển dụng SSI — Hội sở 2026</p>
+            <h1>{hero.headline}</h1>
+            <p className="hero-lead">{hero.subheadline}</p>
             <div className="hero-badge">
               <Building2 size={22} />
               <div>
-                <strong>Tran Thi Thuy Duong</strong>
-                <span>Giam doc Tu van Chung khoan 09 — SSI Hoi so</span>
+                <strong>Trần Thị Thùy Dương</strong>
+                <span>Giám đốc Tư vấn Chứng khoán 09 — SSI Hội sở</span>
               </div>
             </div>
             <div className="hero-cta">
               <a className="btn btn-primary" href="#apply">
-                Nhan lo trinh ung tuyen <ArrowRight size={18} />
+                {hero.cta} <ArrowRight size={18} />
               </a>
-              <a
-                className="btn btn-outline"
-                href={links.zaloRoom}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Lien he Zalo <MessageCircle size={18} />
+              <a className="btn btn-outline" href={links.zaloRoom} target="_blank" rel="noreferrer">
+                {hero.ctaSecondary} <MessageCircle size={18} />
               </a>
             </div>
           </div>
-
           <div className="hero-image-wrap">
             <div className="hero-image-frame">
-              <Image
-                src="/assets/selected/hero-portrait.png"
-                alt="Tran Thi Thuy Duong portrait"
-                fill
-                priority
-                sizes="(max-width: 860px) 92vw, 440px"
-              />
+              <Image src="/assets/selected/hero-portrait.png" alt={hero.portraitAlt} fill priority sizes="(max-width: 860px) 92vw, 440px" />
             </div>
             <div className="hero-accolade">
               <Star size={20} />
-              <span>KOL xuat sac SSI Retail Awards 2025</span>
+              <span>{hero.badge}</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── Stats Strip ────────────────────────── */}
-      <section className="stats-strip" aria-label="Authority proof">
+      {/* ── Stats ────────────────────────── */}
+      <section className="stats-strip" aria-label="Chỉ số uy tín">
         {landingContent.stats.map((item) => (
           <div className="stat-item" key={item.label}>
             <strong className="stat-value">{item.value}</strong>
@@ -116,26 +98,34 @@ export default function Home() {
         ))}
       </section>
 
-      {/* ── Proof Section ──────────────────────── */}
+      {/* ── Benefits ─────────────────────── */}
+      <section className="section" id="why">
+        <div className="section-head">
+          <p className="section-label">Tại sao chọn chúng tôi</p>
+          <h2>6 lý do để bắt đầu sự nghiệp tài chính cùng đội ngũ Thùy Dương</h2>
+        </div>
+        <div className="opp-grid">
+          {landingContent.benefits.map((b) => (
+            <article className="opp-card" key={b.title}>
+              <h3>{b.title}</h3>
+              <p>{b.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Proof ────────────────────────── */}
       <section className="section proof-bg" id="proof">
         <div className="section-head">
-          <p className="section-label">Uy tin ca nhan</p>
-          <h2>Duoc ghi nhan boi hieu qua, doi ngu va thuong hieu ca nhan</h2>
-          <p className="section-lead">
-            Nhung tai san nay dung de tao niem tin ban dau. Thong tin chinh sach va vi tri
-            se duoc xac nhan truc tiep trong qua trinh trao doi.
-          </p>
+          <p className="section-label">Uy tín cá nhân</p>
+          <h2>Được ghi nhận bởi hiệu quả, đội ngũ và thương hiệu cá nhân</h2>
+          <p className="section-lead">Những tài sản này dùng để tạo niềm tin ban đầu. Chính sách và vị trí sẽ được xác nhận trực tiếp.</p>
         </div>
         <div className="proof-grid">
           {landingContent.proofs.map((proof) => (
             <article className="proof-card" key={proof.title}>
               <div className="proof-image">
-                <Image
-                  src={proof.image}
-                  alt={proof.alt}
-                  fill
-                  sizes="(max-width: 860px) 94vw, 31vw"
-                />
+                <Image src={proof.image} alt={proof.alt} fill sizes="(max-width: 860px) 94vw, 31vw" />
               </div>
               <div className="proof-body">
                 <h3>{proof.title}</h3>
@@ -146,11 +136,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Opportunity ────────────────────────── */}
+      {/* ── Opportunity ──────────────────── */}
       <section className="section opp-bg" id="opportunity">
         <div className="section-head">
-          <p className="section-label">Co hoi 2026</p>
-          <h2>Danh cho nguoi muon di nhanh trong nganh chung khoan</h2>
+          <p className="section-label">Cơ hội 2026</p>
+          <h2>4 vị trí dành cho bạn</h2>
         </div>
         <div className="opp-grid">
           {landingContent.roles.map((role) => {
@@ -166,20 +156,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Training ───────────────────────────── */}
+      {/* ── Training ─────────────────────── */}
       <section className="section">
         <div className="training-grid">
           <div className="training-image">
-            <Image
-              src="/assets/selected/training-team-ai-2025.jpg"
-              alt="SSI AI Powered Training group"
-              fill
-              sizes="(max-width: 860px) 96vw, 50vw"
-            />
+            <Image src="/assets/selected/training-team-ai-2025.jpg" alt="SSI AI Powered Training group" fill sizes="(max-width: 860px) 96vw, 50vw" />
           </div>
           <div>
-            <p className="section-label">Dao tao va scale team</p>
-            <h2>Khong chi tuyen nguoi. He thong dao tao nguoi moi.</h2>
+            <p className="section-label">Đào tạo & Phát triển</p>
+            <h2>Không chỉ tuyển người. Đây là hệ thống đào tạo bài bản.</h2>
             <ul className="training-list">
               {landingContent.training.map((item) => (
                 <li key={item}>
@@ -194,45 +179,54 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Form Section ───────────────────────── */}
-      <section className="section proof-bg" id="apply">
+      {/* ── FAQ ──────────────────────────── */}
+      <section className="section proof-bg" id="faq">
+        <div className="section-head">
+          <p className="section-label">Câu hỏi thường gặp</p>
+          <h2>Giải đáp nhanh những băn khoăn của bạn</h2>
+        </div>
+        <div style={{ maxWidth: "780px", margin: "0 auto", display: "grid", gap: "12px" }}>
+          {landingContent.faq.map((item) => (
+            <details key={item.question} className="faq-item">
+              <summary>{item.question}</summary>
+              <p>{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Form ─────────────────────────── */}
+      <section className="section" id="apply">
         <div className="form-grid">
           <div>
-            <p className="section-label">Ung tuyen</p>
-            <h2>Nhan lo trinh bat dau nghe tu van chung khoan tai SSI</h2>
-            <p className="section-lead">
-              Dien thong tin ngan gon. Doi ngu chi Thuy Duong se lien he qua
-              Zalo/email de trao doi buoc tiep theo.
-            </p>
+            <p className="section-label">Ứng tuyển ngay</p>
+            <h2>Điền thông tin — Nhận lộ trình trong 24h</h2>
+            <p className="section-lead">Đội ngũ chị Thùy Dương sẽ liên hệ qua Zalo/email để trao đổi bước tiếp theo. Không spam, không áp lực.</p>
             <div className="form-trust">
-              <p>
-                <ShieldCheck size={18} /> Thong tin chi dung cho tuyen dung
-              </p>
-              <p>
-                <Sparkles size={18} /> Khong cam ket loi nhuan dau tu
-              </p>
+              <p><ShieldCheck size={18} /> Thông tin chỉ dùng cho tuyển dụng</p>
+              <p><Sparkles size={18} /> Không cam kết lợi nhuận đầu tư</p>
             </div>
           </div>
           <LeadForm />
         </div>
       </section>
 
-      {/* ── Links Section ──────────────────────── */}
+      {/* ── Links ────────────────────────── */}
       <section className="links-section">
         <div className="links-grid-inner">
           <div>
-            <p className="section-label">Bio links</p>
-            <h2>Ket noi voi Thuy Duong Invest</h2>
+            <p className="section-label">Kết nối</p>
+            <h2>Theo dõi Thùy Dương Invest</h2>
           </div>
           <div className="links-cards">
             <a href={links.openAccount} target="_blank" rel="noreferrer">
-              <BarChart3 size={20} /> Mo TK SSI <ExternalLink size={14} />
+              <BarChart3 size={20} /> Mở TK SSI <ExternalLink size={14} />
             </a>
             <a href={links.zaloRoom} target="_blank" rel="noreferrer">
               <MessageCircle size={20} /> Zalo room <ExternalLink size={14} />
             </a>
             <a href={links.tiktok} target="_blank" rel="noreferrer">
-              <BookOpenCheck size={20} /> TikTok live <ExternalLink size={14} />
+              <BookOpenCheck size={20} /> TikTok <ExternalLink size={14} />
             </a>
             <a href={links.facebook} target="_blank" rel="noreferrer">
               <Users size={20} /> Facebook <ExternalLink size={14} />

@@ -7,10 +7,10 @@ export function FooterLinks() {
     <footer className="footer">
       <div className="footer-inner">
         <div className="footer-brand">
-          <strong>Thuy Duong Invest</strong>
+          <strong>Thùy Dương Invest</strong>
           <p>
-            Landing thu lead tuyen dung. Chinh sach, vi tri va dieu kien se duoc
-            doi ngu xac nhan truc tiep. Noi dung dau tu chi mang tinh thong tin.
+            Landing thu lead tuyển dụng. Chính sách, vị trí và điều kiện sẽ được
+            đội ngũ xác nhận trực tiếp. Nội dung đầu tư chỉ mang tính thông tin.
           </p>
         </div>
         <div className="footer-links">

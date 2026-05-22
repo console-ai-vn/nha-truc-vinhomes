@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
     const limit = rateLimit(ip);
     if (!limit.success) {
       return NextResponse.json(
-        { message: "Qua nhieu yeu cau. Vui long thu lai sau." },
+        { message: "Quá nhiều yêu cầu. Vui lòng thử lại sau." },
         { status: 429, headers: { "Retry-After": String(limit.reset) } }
       );
     }
@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
     const csrfHeader = request.headers.get("x-csrf-token");
     if (!validateCsrfToken(csrfHeader, csrfCookie)) {
       return NextResponse.json(
-        { message: "Phien da het han. Vui long tai lai trang." },
+        { message: "Phiên đã hết hạn. Vui lòng tải lại trang." },
         { status: 403 }
       );
     }
@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
     const parsed = leadSchema.safeParse(body);
     if (!parsed.success) {
       return NextResponse.json(
-        { message: "Vui long kiem tra lai thong tin gui len." },
+        { message: "Vui lòng kiểm tra lại thông tin gửi lên." },
         { status: 400 }
       );
     }
@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
     const env = getGoogleSheetsEnv();
     if (!env.configured) {
       return NextResponse.json(
-        { message: "Form dang cho ket noi. Vui long lien he Zalo neu can gap." },
+        { message: "Form đang chờ kết nối. Vui lòng liên hệ Zalo nếu cần gấp." },
         { status: 503 }
       );
     }
@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ ok: true });
   } catch {
     return NextResponse.json(
-      { message: "Loi ket noi den may chu. Vui long thu lai." },
+      { message: "Lỗi kết nối đến máy chủ. Vui lòng thử lại." },
       { status: 502 }
     );
   }

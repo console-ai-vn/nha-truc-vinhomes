@@ -40,7 +40,7 @@ export function LeadForm() {
       utmCampaign: getUtmCampaign()
     };
 
-    setState({ status: "loading", message: "Dang gui thong tin..." });
+    setState({ status: "loading", message: "Đang gửi thông tin..." });
 
     const headers: Record<string, string> = { "Content-Type": "application/json" };
     if (csrfRef.current) {
@@ -59,7 +59,7 @@ export function LeadForm() {
     if (response.status === 403) {
       setState({
         status: "error",
-        message: body?.message || "Phien da het han. Vui long tai lai trang."
+        message: body?.message || "Phiên đã hết hạn. Vui lòng tải lại trang."
       });
       return;
     }
@@ -67,7 +67,7 @@ export function LeadForm() {
     if (response.status === 429) {
       setState({
         status: "error",
-        message: body?.message || "Qua nhieu yeu cau. Vui long thu lai sau 1 phut."
+        message: body?.message || "Quá nhiều yêu cầu. Vui lòng thử lại sau 1 phút."
       });
       return;
     }
@@ -75,7 +75,7 @@ export function LeadForm() {
     if (!response.ok) {
       setState({
         status: "error",
-        message: body?.message || "Chua gui duoc. Vui long thu lai hoac lien he Zalo."
+        message: body?.message || "Chưa gửi được. Vui lòng thử lại hoặc liên hệ Zalo."
       });
       return;
     }
@@ -84,7 +84,7 @@ export function LeadForm() {
     form.reset();
     setState({
       status: "success",
-      message: "Da nhan thong tin. Doi ngu se lien he qua Zalo/email de trao doi buoc tiep theo."
+      message: "Đã nhận thông tin. Đội ngũ sẽ liên hệ qua Zalo/email để trao đổi bước tiếp theo."
     });
   }, []);
 
@@ -92,7 +92,7 @@ export function LeadForm() {
     <form className="lead-form" onSubmit={submitLead}>
       <div className="field-row">
         <div className="form-field">
-          <label htmlFor="fullName">Ho ten</label>
+          <label htmlFor="fullName">Họ tên</label>
           <input id="fullName" name="fullName" autoComplete="name" required />
         </div>
         <div className="form-field">
@@ -104,36 +104,36 @@ export function LeadForm() {
           <input id="email" name="email" type="email" autoComplete="email" required />
         </div>
         <div className="form-field">
-          <label htmlFor="roleInterest">Vi tri quan tam</label>
+          <label htmlFor="roleInterest">Vị trí quan tâm</label>
           <select id="roleInterest" name="roleInterest" required defaultValue="">
-            <option value="" disabled>Chon vi tri</option>
-            <option>Tu van chung khoan</option>
-            <option>Hoc viec / thuc tap sinh</option>
-            <option>CTV / doi ngu lien ket</option>
-            <option>Dinh huong leader</option>
+            <option value="" disabled>Chọn vị trí</option>
+            <option>Tư vấn chứng khoán</option>
+            <option>Học việc / Thực tập sinh</option>
+            <option>CTV / Đội ngũ liên kết</option>
+            <option>Định hướng Leader</option>
           </select>
         </div>
         <div className="form-field">
-          <label htmlFor="experienceLevel">Kinh nghiem hien tai</label>
+          <label htmlFor="experienceLevel">Kinh nghiệm hiện tại</label>
           <select id="experienceLevel" name="experienceLevel" defaultValue="">
-            <option value="">Chon neu phu hop</option>
-            <option>Chua co kinh nghiem</option>
-            <option>Da lam sales</option>
-            <option>Da lam tai chinh/chung khoan</option>
-            <option>Da co team/CTV</option>
+            <option value="">Chọn nếu phù hợp</option>
+            <option>Chưa có kinh nghiệm</option>
+            <option>Đã làm sales</option>
+            <option>Đã làm tài chính/chứng khoán</option>
+            <option>Đã có team/CTV</option>
           </select>
         </div>
         <div className="form-field">
           <label htmlFor="socialLink">Facebook/TikTok</label>
-          <input id="socialLink" name="socialLink" placeholder="Link profile neu co" />
+          <input id="socialLink" name="socialLink" placeholder="Link profile nếu có" />
         </div>
         <div className="form-field full">
-          <label htmlFor="note">Ghi chu ngan</label>
-          <textarea id="note" name="note" placeholder="Muc tieu, thoi gian bat dau, cau hoi..." />
+          <label htmlFor="note">Ghi chú ngắn</label>
+          <textarea id="note" name="note" placeholder="Mục tiêu, thời gian bắt đầu, câu hỏi..." />
         </div>
       </div>
       <button className="form-btn" type="submit" disabled={state.status === "loading"}>
-        Gui thong tin ung tuyen <Send size={18} />
+        Gửi thông tin ứng tuyển <Send size={18} />
       </button>
       <p className={`form-msg${state.status === "error" ? " error" : ""}${state.status === "success" ? " success" : ""}`}>
         {state.message}
