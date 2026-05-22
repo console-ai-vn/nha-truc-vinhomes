@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#1a1416"/>
+  <rect x="48" y="48" width="1104" height="534" rx="16" fill="#2d2024"/>
+  <rect x="60" y="60" width="80" height="80" rx="20" fill="#d71920"/>
+  <text x="100" y="110" text-anchor="middle" fill="white" font-family="Inter,system-ui,sans-serif" font-weight="900" font-size="40">TD</text>
+  <text x="168" y="110" fill="white" font-family="Inter,system-ui,sans-serif" font-weight="700" font-size="28">Thùy Dương Invest</text>
+  <line x1="80" y1="172" x2="1120" y2="172" stroke="rgba(255,255,255,0.1)"/>
+  <text x="80" y="260" fill="white" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="48">Gia nhập đội ngũ chuyên gia hàng đầu Hội sở SSI</text>
+  <text x="80" y="360" fill="rgba(255,255,255,0.6)" font-family="Inter,system-ui,sans-serif" font-weight="500" font-size="28">Giám đốc Tư vấn Chứng khoán 09 — Trần Thị Thùy Dương</text>
+  <text x="80" y="430" fill="rgba(255,255,255,0.4)" font-family="Inter,system-ui,sans-serif" font-weight="500" font-size="22">Tuyển dụng 2026 — Ứng tuyển ngay tại thuy-duong-ssi.vercel.app</text>
+  <rect x="80" y="470" width="220" height="52" rx="12" fill="#d71920"/>
+  <text x="190" y="503" text-anchor="middle" fill="white" font-family="Inter,system-ui,sans-serif" font-weight="700" font-size="18">Ứng tuyển ngay</text>
+</svg>

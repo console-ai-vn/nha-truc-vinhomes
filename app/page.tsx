@@ -30,7 +30,9 @@ export default function Home() {
     <main>
       {/* Nav */}
       <nav className={`nav${scrolled ? " scrolled" : ""}`} aria-label="Chính">
-        <a className="brand" href="#top"><span className="brand-mark">TD</span><strong>Thùy Dương Invest</strong></a>
+        <a className="brand" href="#top">
+          <Image src="/assets/brand/logo.svg" alt="Thùy Dương Invest" width={182} height={40} />
+        </a>
         <div className="nav-links">
           <a href="#authority">Uy tín</a>
           <a href="#why">Lợi ích</a>
