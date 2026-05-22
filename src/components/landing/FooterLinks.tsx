@@ -8,10 +8,6 @@ export function FooterLinks() {
       <div className="footer-inner">
         <div className="footer-brand">
           <strong>Thùy Dương Invest</strong>
-          <p>
-            Landing thu lead tuyển dụng. Chính sách, vị trí và điều kiện sẽ được
-            đội ngũ xác nhận trực tiếp. Nội dung đầu tư chỉ mang tính thông tin.
-          </p>
         </div>
         <div className="footer-links">
           <a href={`tel:${links.phone}`}>0933 15 3333</a>
