@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
@@ -13,6 +13,11 @@ export const metadata: Metadata = {
       "Landing tuyển dụng cho đội ngũ tư vấn chứng khoán SSI Hội sở 2026.",
     images: ["/assets/selected/hero-portrait.png"]
   }
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1
 };
 
 export default function RootLayout({

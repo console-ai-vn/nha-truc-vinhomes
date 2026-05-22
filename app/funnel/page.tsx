@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight, BarChart3, BookOpen, Download,
   MessageCircle, Phone, ShieldCheck, Sparkles, Users, TrendingUp
@@ -10,6 +10,11 @@ export default function FunnelPage() {
   const [form, setForm] = useState({ fullName: "", email: "", phoneZalo: "", interest: "" });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
+  const csrfRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    fetch("/api/csrf").then(r => r.json()).then(d => { csrfRef.current = d.token; }).catch(() => {});
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,7 +24,11 @@ export default function FunnelPage() {
     try {
       const r = await fetch("/api/funnel", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          ...(csrfRef.current ? { "X-CSRF-Token": csrfRef.current } : {})
+        },
+        credentials: "same-origin",
         body: JSON.stringify(form)
       });
       const data = await r.json();
@@ -108,7 +117,7 @@ export default function FunnelPage() {
                 value={form.phoneZalo} onChange={e => setForm({ ...form, phoneZalo: e.target.value })}
                 style={inputStyle}
               />
-              <input type="hidden" value="Tài liệu miễn phí" />
+              <input type="hidden" name="interest" value="Tài liệu miễn phí" />
               <button type="submit" disabled={status === "loading"} style={{
                 width: "100%", minHeight: 48, border: "none", borderRadius: "var(--radius-md)",
                 background: "var(--red)", color: "#fff", fontWeight: 700, fontSize: 15,

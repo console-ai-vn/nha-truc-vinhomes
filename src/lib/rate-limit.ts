@@ -37,5 +37,6 @@ export function rateLimit(
 }
 
 export function extractIp(request: Request): string {
-  return request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  const forwarded = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
+  return forwarded || `anon-${Math.random().toString(36).slice(2, 10)}`;
 }

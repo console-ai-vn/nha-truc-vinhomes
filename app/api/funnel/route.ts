@@ -1,9 +1,10 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { getGoogleSheetsEnv } from "@/src/lib/env";
 import { appendLeadToSheet } from "@/src/lib/google-sheets";
+import { validateCsrfToken } from "@/src/lib/csrf";
 import { extractIp, rateLimit } from "@/src/lib/rate-limit";
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
     const ip = extractIp(request);
     const limit = rateLimit(ip);
@@ -11,6 +12,15 @@ export async function POST(request: Request) {
       return NextResponse.json(
         { message: "Quá nhiều yêu cầu. Vui lòng thử lại sau." },
         { status: 429, headers: { "Retry-After": String(limit.reset) } }
+      );
+    }
+
+    const csrfCookie = request.cookies.get("__Host-csrf")?.value ?? null;
+    const csrfHeader = request.headers.get("x-csrf-token");
+    if (!validateCsrfToken(csrfHeader, csrfCookie)) {
+      return NextResponse.json(
+        { message: "Phiên đã hết hạn. Vui lòng tải lại trang." },
+        { status: 403 }
       );
     }
 
@@ -24,9 +34,20 @@ export async function POST(request: Request) {
       );
     }
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(String(email))) {
+      return NextResponse.json(
+        { message: "Email không hợp lệ. Vui lòng kiểm tra lại." },
+        { status: 400 }
+      );
+    }
+
     const env = getGoogleSheetsEnv();
     if (!env.configured) {
-      return NextResponse.json({ ok: true, message: "Đã ghi nhận! Đội ngũ sẽ liên hệ sớm." });
+      return NextResponse.json(
+        { message: "Form đang chờ kết nối. Vui lòng liên hệ Zalo nếu cần gấp." },
+        { status: 503 }
+      );
     }
 
     await appendLeadToSheet({

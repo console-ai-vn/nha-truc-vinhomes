@@ -3,8 +3,15 @@ import { getGoogleSheetsEnv } from "./env";
 
 function getPrivateKey(): string {
   if (process.env.GOOGLE_PRIVATE_KEY_FILE) {
-    const { readFileSync } = require("fs") as typeof import("fs");
-    return JSON.parse(readFileSync(process.env.GOOGLE_PRIVATE_KEY_FILE, "utf8")).private_key;
+    try {
+      const { readFileSync } = require("fs") as typeof import("fs");
+      const raw = readFileSync(process.env.GOOGLE_PRIVATE_KEY_FILE, "utf8");
+      const parsed = JSON.parse(raw);
+      if (!parsed.private_key) throw new Error("Missing private_key in key file");
+      return parsed.private_key;
+    } catch (e) {
+      throw new Error(`Failed to read key file: ${(e as Error).message}`);
+    }
   }
   return (process.env.GOOGLE_PRIVATE_KEY ?? "").replace(/\\n/g, "\n");
 }

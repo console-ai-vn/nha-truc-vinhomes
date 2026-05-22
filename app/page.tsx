@@ -8,7 +8,6 @@ import {
   BookOpenCheck,
   BriefcaseBusiness,
   Building2,
-  Download,
   ExternalLink,
   GraduationCap,
   MessageCircle,
