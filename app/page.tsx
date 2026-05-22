@@ -19,6 +19,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 export default function Home() {
   const { links, hero } = landingContent;
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
     const cb = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", cb, { passive: true });
@@ -37,6 +38,18 @@ export default function Home() {
           <a href="#faq">FAQ</a>
           <a href="#apply" className="nav-cta">Ứng tuyển</a>
         </div>
+        <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu" aria-expanded={menuOpen}>
+          <span /><span /><span />
+        </button>
+        {menuOpen && (
+          <div className="mobile-menu">
+            <a href="#authority" onClick={() => setMenuOpen(false)}>Uy tín</a>
+            <a href="#why" onClick={() => setMenuOpen(false)}>Lợi ích</a>
+            <a href="#opportunity" onClick={() => setMenuOpen(false)}>Vị trí</a>
+            <a href="#faq" onClick={() => setMenuOpen(false)}>FAQ</a>
+            <a href="#apply" onClick={() => setMenuOpen(false)} className="nav-cta">Ứng tuyển</a>
+          </div>
+        )}
       </nav>
 
       {/* Hero */}
