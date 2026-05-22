@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Send } from "lucide-react";
 import { getUtmCampaign, trackEvent } from "@/src/lib/tracking";
 
@@ -11,8 +11,20 @@ type FormState = {
 
 export function LeadForm() {
   const [state, setState] = useState<FormState>({ status: "idle", message: "" });
+  const csrfRef = useRef<string | null>(null);
 
-  async function submitLead(event: React.FormEvent<HTMLFormElement>) {
+  useEffect(() => {
+    fetch("/api/csrf")
+      .then((res) => res.json())
+      .then((data) => {
+        csrfRef.current = data.token;
+      })
+      .catch(() => {
+        csrfRef.current = null;
+      });
+  }, []);
+
+  const submitLead = useCallback(async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
@@ -30,14 +42,37 @@ export function LeadForm() {
 
     setState({ status: "loading", message: "Dang gui thong tin..." });
 
+    const headers: Record<string, string> = { "Content-Type": "application/json" };
+    if (csrfRef.current) {
+      headers["X-CSRF-Token"] = csrfRef.current;
+    }
+
     const response = await fetch("/api/leads", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers,
+      credentials: "same-origin",
       body: JSON.stringify(payload)
     });
 
+    const body = (await response.json().catch(() => null)) as { message?: string } | null;
+
+    if (response.status === 403) {
+      setState({
+        status: "error",
+        message: body?.message || "Phien da het han. Vui long tai lai trang."
+      });
+      return;
+    }
+
+    if (response.status === 429) {
+      setState({
+        status: "error",
+        message: body?.message || "Qua nhieu yeu cau. Vui long thu lai sau 1 phut."
+      });
+      return;
+    }
+
     if (!response.ok) {
-      const body = (await response.json().catch(() => null)) as { message?: string } | null;
       setState({
         status: "error",
         message: body?.message || "Chua gui duoc. Vui long thu lai hoac lien he Zalo."
@@ -51,7 +86,7 @@ export function LeadForm() {
       status: "success",
       message: "Da nhan thong tin. Doi ngu se lien he qua Zalo/email de trao doi buoc tiep theo."
     });
-  }
+  }, []);
 
   return (
     <form className="lead-form" onSubmit={submitLead}>

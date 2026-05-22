@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "latest",
+    "google-auth-library": "^10.6.2",
     "lucide-react": "latest",
     "next": "latest",
     "react": "latest",

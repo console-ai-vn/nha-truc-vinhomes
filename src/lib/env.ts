@@ -1,9 +1,8 @@
-export function getLarkEnv() {
+export function getGoogleSheetsEnv() {
   const env = {
-    appId: process.env.LARK_APP_ID,
-    appSecret: process.env.LARK_APP_SECRET,
-    baseAppToken: process.env.LARK_BASE_APP_TOKEN,
-    tableId: process.env.LARK_TABLE_ID
+    clientEmail: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+    privateKeyFile: process.env.GOOGLE_PRIVATE_KEY_FILE,
+    sheetId: process.env.GOOGLE_SHEET_ID
   };
 
   const missing = Object.entries(env)
