@@ -213,7 +213,8 @@ export default function FunnelPage() {
 }
 
 const inputStyle: React.CSSProperties = {
-  width: "100%", minHeight: 44, border: "1px solid var(--border-light)",
-  borderRadius: "var(--radius-md)", padding: "0 14px", fontSize: 15,
-  marginBottom: 10, background: "var(--warm-white)", boxSizing: "border-box"
+  width: "100%", minHeight: 50, border: "1.5px solid var(--border)",
+  borderRadius: "10px", padding: "0 16px", fontSize: 15,
+  marginBottom: 12, background: "#fafaf9", boxSizing: "border-box",
+  transition: "border-color 0.2s, box-shadow 0.2s"
 };
