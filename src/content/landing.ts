@@ -57,6 +57,24 @@ export const landingContent = {
       text: "Phòng TVCK 09 liên tục đạt thứ hạng cao trong hệ thống SSI. Dẫn đầu về hiệu quả kinh doanh và chất lượng tư vấn khách hàng.",
       image: "/assets/selected/top-phong.jpg",
       alt: "Top phòng xuất sắc SSI"
+    },
+    {
+      title: "Bảng xếp hạng — Top đầu Hội sở",
+      text: "Thành tích được SSI công bố định kỳ. Vị trí dẫn đầu về doanh số và chất lượng tư vấn trong toàn hệ thống Hội sở.",
+      image: "/assets/selected/bang-xep-hang.jpg",
+      alt: "Bảng xếp hạng thành tích SSI"
+    },
+    {
+      title: "Bổ nhiệm Giám đốc Tư vấn",
+      text: "Quyết định bổ nhiệm chính thức vị trí Giám đốc Tư vấn Chứng khoán — ghi nhận năng lực quản lý và phát triển đội ngũ.",
+      image: "/assets/selected/giam-doc-tu-van.jpg",
+      alt: "Quyết định bổ nhiệm Giám đốc Tư vấn"
+    },
+    {
+      title: "Vinh danh cá nhân xuất sắc",
+      text: "Được SSI vinh danh vì những đóng góp nổi bật trong hoạt động tư vấn và phát triển thương hiệu cá nhân.",
+      image: "/assets/selected/vinh-danh.jpg",
+      alt: "Vinh danh cá nhân xuất sắc SSI"
     }
   ],
 
