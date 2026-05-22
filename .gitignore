@@ -1,0 +1,14 @@
+.next/
+node_modules/
+.env
+.env.local
+.env.*.local
+out/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.logs/
+assets/raw-photos/
+*.tsbuildinfo
+design-tokens.json

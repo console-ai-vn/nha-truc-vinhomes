@@ -1,0 +1,51 @@
+[
+  {
+    "file": "hero-portrait.png",
+    "section": "hero",
+    "alt": "Tran Thi Thuy Duong portrait for Thuy Duong Invest",
+    "source": "Beacons public profile avatar",
+    "usage": "Primary portrait, above the fold"
+  },
+  {
+    "file": "proof-kol-2025.jpg",
+    "section": "proof",
+    "alt": "SSI Retail Awards 2025 certificate honoring Tran Thi Thuy Duong",
+    "source": "assets/awards/fb-own_photos-0033.jpg",
+    "usage": "KOL xuat sac 2025 proof"
+  },
+  {
+    "file": "proof-retail-awards-2024.jpg",
+    "section": "proof",
+    "alt": "Retail Awards 2024 recognition certificates for Tran Thi Thuy Duong",
+    "source": "assets/awards/fb-own_photos-0032.jpg",
+    "usage": "2024 performance recognition proof"
+  },
+  {
+    "file": "proof-branch-award-2025.jpg",
+    "section": "proof",
+    "alt": "Tran Thi Thuy Duong in front of a 2025 branch recognition screen",
+    "source": "assets/portrait-candidates/fb-own_photos-0107.jpg",
+    "usage": "Personal proof and human moment"
+  },
+  {
+    "file": "training-team-ai-2025.jpg",
+    "section": "training",
+    "alt": "SSI AI Powered Training group photo with certificates",
+    "source": "assets/portrait-candidates/fb-own_photos-0118.jpg",
+    "usage": "Training and team development proof"
+  },
+  {
+    "file": "recruitment-policy.jpg",
+    "section": "opportunity",
+    "alt": "SSI Retail Brokerage business mechanism for linked collaborators",
+    "source": "assets/recruitment/fb-own_photos-0015.jpg",
+    "usage": "Recruitment and income mechanism proof"
+  },
+  {
+    "file": "ssi-journey-note.jpg",
+    "section": "authority",
+    "alt": "SSI anniversary note recognizing Tran Thi Thuy Duong's journey with the company",
+    "source": "assets/portrait-candidates/fb-own_photos-0076.jpg",
+    "usage": "SSI tenure and culture proof"
+  }
+]
