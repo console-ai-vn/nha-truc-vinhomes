@@ -100,6 +100,43 @@ export default function Home() {
         ))}
       </section>
 
+      {/* ── Achievement Timeline ──────── */}
+      <section className="section" style={{ background: "#fff" }}>
+        <div className="section-head">
+          <p className="section-label">Hành trình & Thành tựu</p>
+          <h2>10 năm — từ tư vấn viên đến Giám đốc SSI</h2>
+        </div>
+        <div style={{ maxWidth: "840px", margin: "0 auto", position: "relative" }}>
+          {landingContent.achievements.map((a, i) => (
+            <div key={a.year} style={{
+              display: "flex", gap: 24, padding: "0 0 32px",
+              position: "relative"
+            }}>
+              <div style={{ flexShrink: 0, textAlign: "right", width: 64 }}>
+                <strong style={{
+                  fontFamily: "'Inter', system-ui, sans-serif",
+                  fontSize: 18, fontWeight: 800, color: "var(--red)"
+                }}>{a.year}</strong>
+              </div>
+              <div style={{
+                width: 2, flexShrink: 0, background: i < 4 ? "var(--red)" : "var(--border-light)",
+                position: "relative"
+              }}>
+                <div style={{
+                  width: 12, height: 12, borderRadius: "50%",
+                  background: "var(--red)", position: "absolute",
+                  top: 6, left: -5
+                }} />
+              </div>
+              <div style={{ paddingTop: 2 }}>
+                <h3 style={{ fontSize: 18, margin: "0 0 4px", fontWeight: 700 }}>{a.title}</h3>
+                <p style={{ color: "var(--muted)", fontSize: 15, lineHeight: 1.6, margin: 0 }}>{a.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ── Investor Funnel CTA ──────── */}
       <section style={{
         background: "linear-gradient(135deg, #1a1416 0%, #2d2024 100%)",

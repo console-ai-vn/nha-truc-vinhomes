@@ -20,17 +20,17 @@ export const landingContent = {
   },
 
   stats: [
-    { value: "10 năm", label: "Kinh nghiệm thị trường" },
+    { value: "10 năm", label: "Gắn bó & phát triển tại SSI" },
     { value: "SSI", label: "Hội sở 03 / TVCK 09" },
-    { value: "2025", label: "KOL xuất sắc Retail Awards" },
-    { value: "2024", label: "Retail Awards ghi nhận" },
-    { value: "HS09", label: "Xây dựng đội ngũ tư vấn" }
+    { value: "ESOP", label: "Nhận cổ phiếu thưởng — ghi nhận đóng góp" },
+    { value: "150+", label: "Phiên livestream nhận định thị trường" },
+    { value: "Top 2", label: "Phòng xuất sắc toàn SSI" }
   ],
 
   proofs: [
     {
-      title: "KOL xuất sắc 2025",
-      text: "Ghi nhận từ SSI Retail Awards cho hoạt động thương hiệu cá nhân và đóng góp trong chương trình Điểm Tin Sáng.",
+      title: "Tròn 10 năm gắn bó cùng SSI",
+      text: "Không chỉ là một cột mốc — là cả một hành trình trưởng thành. Nhận ESOP và cương vị mới, sẵn sàng cho chặng đường tiếp theo cùng đội ngũ.",
       image: "/assets/selected/proof-kol-2025.jpg",
       alt: "SSI Retail Awards 2025 certificate"
     },
@@ -96,6 +96,14 @@ export const landingContent = {
       text: "Dành cho người đã có kinh nghiệm sales, tài chính hoặc quản lý nhóm và muốn tăng tốc.",
       icon: Award
     }
+  ],
+
+  achievements: [
+    { year: "2016", title: "Gia nhập SSI", text: "Bắt đầu sự nghiệp tư vấn chứng khoán tại SSI Hội sở." },
+    { year: "2020", title: "Giám đốc Tư vấn", text: "Được bổ nhiệm vị trí Giám đốc Tư vấn Chứng khoán, bắt đầu xây dựng đội ngũ riêng." },
+    { year: "2024", title: "Retail Awards", text: "Được SSI vinh danh vì thành tích tăng trưởng vượt trội trong hoạt động tư vấn." },
+    { year: "2025", title: "KOL xuất sắc + ESOP", text: "Đạt danh hiệu KOL xuất sắc nhất năm — nhận cổ phiếu ESOP ghi nhận đóng góp. 150+ phiên livestream." },
+    { year: "2026", title: "Cương vị mới — Mở rộng đội ngũ", text: "Nhận cương vị mới, tiếp tục mở rộng phòng TVCK 09. Tuyển dụng thế hệ tư vấn viên tiếp theo." }
   ],
 
   training: [
