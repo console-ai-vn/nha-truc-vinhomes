@@ -45,6 +45,18 @@ export const landingContent = {
       text: "Hình ảnh vinh danh trưởng phòng môi giới xuất sắc chi nhánh 2025 — minh chứng năng lực dẫn dắt và tạo kết quả.",
       image: "/assets/selected/proof-branch-award-2025.jpg",
       alt: "Trần Thị Thùy Dương branch recognition"
+    },
+    {
+      title: "Chứng chỉ hành nghề chứng khoán",
+      text: "Chứng chỉ hành nghề tư vấn chứng khoán do Ủy ban Chứng khoán Nhà nước cấp. Đảm bảo tư vấn đúng pháp lý, bảo vệ quyền lợi nhà đầu tư.",
+      image: "/assets/selected/cert-hanh-nghe.jpg",
+      alt: "Chứng chỉ hành nghề chứng khoán"
+    },
+    {
+      title: "Top phòng xuất sắc toàn SSI",
+      text: "Phòng TVCK 09 liên tục đạt thứ hạng cao trong hệ thống SSI. Dẫn đầu về hiệu quả kinh doanh và chất lượng tư vấn khách hàng.",
+      image: "/assets/selected/top-phong.jpg",
+      alt: "Top phòng xuất sắc SSI"
     }
   ],
 
