@@ -8,6 +8,7 @@ import {
   BookOpenCheck,
   BriefcaseBusiness,
   Building2,
+  Download,
   ExternalLink,
   GraduationCap,
   MessageCircle,
@@ -15,6 +16,7 @@ import {
   ShieldCheck,
   Sparkles,
   Star,
+  TrendingUp,
   Users
 } from "lucide-react";
 import Image from "next/image";
@@ -96,6 +98,27 @@ export default function Home() {
             <span className="stat-label">{item.label}</span>
           </div>
         ))}
+      </section>
+
+      {/* ── Investor Funnel CTA ──────── */}
+      <section style={{
+        background: "linear-gradient(135deg, #1a1416 0%, #2d2024 100%)",
+        padding: "28px var(--space-x)", textAlign: "center"
+      }}>
+        <div style={{ maxWidth: "var(--max-w)", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "center", gap: 24, flexWrap: "wrap" }}>
+          <p style={{ color: "#fff", margin: 0, fontSize: 17, fontWeight: 500 }}>
+            <TrendingUp size={20} style={{ marginRight: 8, verticalAlign: -4 }} />
+            Bạn là <strong>nhà đầu tư</strong>? Nhận bộ tài liệu + tư vấn miễn phí
+          </p>
+          <a href="/funnel" style={{
+            display: "inline-flex", alignItems: "center", gap: 8,
+            padding: "10px 24px", borderRadius: "var(--radius-md)",
+            background: "var(--gold)", color: "#fff", fontWeight: 700,
+            fontSize: 15, textDecoration: "none"
+          }}>
+            Khám phá ngay <ArrowRight size={16} />
+          </a>
+        </div>
       </section>
 
       {/* ── Benefits ─────────────────────── */}
