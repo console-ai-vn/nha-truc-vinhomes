@@ -12,3 +12,5 @@ yarn-error.log*
 assets/raw-photos/
 *.tsbuildinfo
 design-tokens.json
+
+.vercel
