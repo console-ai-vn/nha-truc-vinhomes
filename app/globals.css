@@ -979,7 +979,35 @@ main {
     width: 100%;
   }
 
-  .footer-inner {
-    flex-direction: column;
+    .footer-inner {
+      flex-direction: column;
+    }
+  }
+
+/* ── Sticky Mobile CTA ──────────────────────────── */
+
+.sticky-cta {
+  display: none;
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 99;
+  padding: 12px var(--space-x);
+  background: rgba(254, 252, 249, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid var(--border-light);
+}
+
+@media (max-width: 860px) {
+  .sticky-cta {
+    display: block;
+  }
+
+  .sticky-cta .btn {
+    width: 100%;
+  }
+
+  main {
+    padding-bottom: 80px;
   }
 }

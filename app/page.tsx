@@ -296,6 +296,12 @@ export default function Home() {
       </section>
 
       <FooterLinks />
+
+      <div className="sticky-cta" aria-hidden="true">
+        <a className="btn btn-primary" href="#apply">
+          Ứng tuyển ngay <ArrowRight size={18} />
+        </a>
+      </div>
     </main>
   );
 }
