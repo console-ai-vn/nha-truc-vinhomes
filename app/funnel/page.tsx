@@ -79,16 +79,16 @@ export default function FunnelPage() {
 
       {/* ── 3 Columns ─────────────────── */}
       <section style={{ padding: "0 var(--space-x) 80px", maxWidth: "var(--max-w)", margin: "0 auto" }}>
-        <div style={{
-          display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-          gap: 20
-        }}>
+        <div className="funnel-step-grid">
+          <div aria-hidden className="funnel-step-line" />
           {/* Card 1: Tài liệu */}
           <div style={{
             background: "#fff", border: "1px solid var(--border-light)",
             borderRadius: "var(--radius-lg)", padding: "36px 28px",
-            display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center"
+            display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center",
+            position: "relative", zIndex: 1
           }}>
+            <span style={stepBadgeStyle}>1</span>
             <div style={{
               width: 64, height: 64, borderRadius: "var(--radius-md)",
               background: "var(--paper)", display: "grid", placeItems: "center", marginBottom: 20
@@ -139,8 +139,10 @@ export default function FunnelPage() {
           <div style={{
             background: "#fff", border: "1px solid var(--border-light)",
             borderRadius: "var(--radius-lg)", padding: "36px 28px",
-            display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center"
+            display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center",
+            position: "relative", zIndex: 1
           }}>
+            <span style={stepBadgeStyle}>2</span>
             <div style={{
               width: 64, height: 64, borderRadius: "var(--radius-md)",
               background: "var(--paper)", display: "grid", placeItems: "center", marginBottom: 20
@@ -171,8 +173,10 @@ export default function FunnelPage() {
           <div style={{
             background: "#fff", border: "1px solid var(--border-light)",
             borderRadius: "var(--radius-lg)", padding: "36px 28px",
-            display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center"
+            display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center",
+            position: "relative", zIndex: 1
           }}>
+            <span style={stepBadgeStyle}>3</span>
             <div style={{
               width: 64, height: 64, borderRadius: "var(--radius-md)",
               background: "var(--paper)", display: "grid", placeItems: "center", marginBottom: 20
@@ -217,4 +221,19 @@ const inputStyle: React.CSSProperties = {
   borderRadius: "10px", padding: "0 16px", fontSize: 15,
   marginBottom: 12, background: "#fafaf9", boxSizing: "border-box",
   transition: "border-color 0.2s, box-shadow 0.2s"
+};
+
+const stepBadgeStyle: React.CSSProperties = {
+  position: "absolute",
+  top: -14,
+  width: 32,
+  height: 32,
+  borderRadius: "50%",
+  display: "grid",
+  placeItems: "center",
+  background: "var(--red)",
+  color: "#fff",
+  fontSize: 14,
+  fontWeight: 800,
+  boxShadow: "0 8px 22px rgba(215, 25, 32, 0.28)"
 };

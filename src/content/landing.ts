@@ -12,25 +12,25 @@ export const landingContent = {
 
   hero: {
     headline: "Gia nhập đội ngũ chuyên gia hàng đầu Hội sở SSI",
-    subheadline: "Trần Thị Thùy Dương — 10 năm kinh nghiệm, Giám đốc Tư vấn Chứng khoán 09, KOL xuất sắc nhất SSI 2025. Sẵn sàng chia sẻ lộ trình và đào tạo thế hệ tư vấn viên tiếp theo.",
-    portraitAlt: "Trần Thị Thùy Dương — Giám đốc Tư vấn Chứng khoán SSI",
+    subheadline: "Trần Thị Thùy Dương — 10 năm kinh nghiệm, Giám Đốc Tư vấn đầu tư SSI, KOL xuất sắc nhất SSI 2025. Sẵn sàng chia sẻ lộ trình và đào tạo thế hệ tư vấn viên tiếp theo.",
+    portraitAlt: "Trần Thị Thùy Dương — Giám Đốc Tư vấn đầu tư SSI",
     cta: "Nhận lộ trình ứng tuyển",
     ctaSecondary: "Nhắn Zalo tư vấn",
     badge: "KOL xuất sắc SSI Retail Awards 2025"
   },
 
   stats: [
-    { value: "10 năm", label: "Gắn bó & phát triển tại SSI" },
-    { value: "SSI", label: "Hội sở 03 / TVCK 09" },
+    { value: "10+ năm", label: "Gắn bó & phát triển tại SSI" },
+    { value: "SSI", label: "Hội sở 03" },
     { value: "ESOP", label: "Nhận cổ phiếu thưởng — ghi nhận đóng góp" },
     { value: "150+", label: "Phiên livestream nhận định thị trường" },
-    { value: "Top 2", label: "Phòng xuất sắc toàn SSI" }
+    { value: "Top 2", label: "Người Tiêu Biểu SSI 2025" }
   ],
 
   proofs: [
     {
       title: "Tròn 10 năm — Bổ nhiệm Giám đốc 2026",
-      text: "Từ Tư vấn viên đến Giám đốc Tư vấn Chứng khoán 09. Nhận ESOP và chính thức được bổ nhiệm Giám đốc, sẵn sàng cho chặng đường tiếp theo cùng đội ngũ.",
+      text: "Từ Tư vấn viên đến Giám Đốc Tư vấn đầu tư SSI. Nhận ESOP và chính thức được bổ nhiệm Giám Đốc, sẵn sàng cho chặng đường tiếp theo cùng đội ngũ.",
       image: "/assets/selected/proof-kol-2025.jpg",
       alt: "SSI Retail Awards 2025 certificate"
     },
@@ -54,7 +54,7 @@ export const landingContent = {
     },
     {
       title: "Top phòng xuất sắc toàn SSI",
-      text: "Phòng TVCK 09 liên tục đạt thứ hạng cao trong hệ thống SSI. Dẫn đầu về hiệu quả kinh doanh và chất lượng tư vấn khách hàng.",
+      text: "Phòng tư vấn liên tục đạt thứ hạng cao trong hệ thống SSI. Dẫn đầu về hiệu quả kinh doanh và chất lượng tư vấn khách hàng.",
       image: "/assets/selected/top-phong.jpg",
       alt: "Top phòng xuất sắc SSI"
     },
@@ -65,16 +65,16 @@ export const landingContent = {
       alt: "Bảng xếp hạng thành tích SSI"
     },
     {
-      title: "Bổ nhiệm Giám đốc Tư vấn",
-      text: "Quyết định bổ nhiệm chính thức vị trí Giám đốc Tư vấn Chứng khoán — ghi nhận năng lực quản lý và phát triển đội ngũ.",
+      title: "Bổ nhiệm Giám Đốc Tư vấn đầu tư SSI",
+      text: "Quyết định bổ nhiệm chính thức vị trí Giám Đốc Tư vấn đầu tư SSI — ghi nhận năng lực quản lý và phát triển đội ngũ.",
       image: "/assets/selected/giam-doc-tu-van.jpg",
-      alt: "Quyết định bổ nhiệm Giám đốc Tư vấn"
+      alt: "Quyết định bổ nhiệm Giám Đốc Tư vấn đầu tư SSI"
     },
     {
-      title: "Vinh danh cá nhân xuất sắc",
+      title: "Vinh danh Người Tiêu Biểu SSI 2025",
       text: "Được SSI vinh danh vì những đóng góp nổi bật trong hoạt động tư vấn và phát triển thương hiệu cá nhân.",
       image: "/assets/selected/vinh-danh.jpg",
-      alt: "Vinh danh cá nhân xuất sắc SSI"
+      alt: "Vinh danh Người Tiêu Biểu SSI 2025"
     }
   ],
 
@@ -97,11 +97,62 @@ export const landingContent = {
     },
     {
       title: "Cơ hội thăng tiến rõ ràng",
-      text: "Lộ trình từ Thực tập sinh → Tư vấn viên → Trưởng nhóm → Quản lý đội ngũ. Hỗ trợ lấy chứng chỉ hành nghề."
+      text: "Lộ trình từ Thực tập sinh/CTV → Tư vấn viên → Trưởng phòng → Giám Đốc Tư vấn → Giám Đốc Trung tâm Kinh doanh. Hỗ trợ lấy chứng chỉ hành nghề."
     },
     {
       title: "Văn hóa team trẻ, năng động",
       text: "Môi trường làm việc tích cực, chia sẻ kiến thức hàng ngày. Không áp lực doanh số độc hại — phát triển bền vững."
+    },
+    {
+      title: "Đồng hành thực chiến",
+      text: "Được quan sát case tư vấn thật, cách chăm sóc khách hàng và cách xử lý tình huống thị trường cùng đội ngũ."
+    },
+    {
+      title: "Hoạt động đội nhóm đều đặn",
+      text: "Team building, vinh danh, sinh hoạt nội bộ và các buổi kết nối giúp đội ngũ giữ nhịp học hỏi, hỗ trợ nhau."
+    }
+  ],
+
+  teamGallery: [
+    {
+      image: "/assets/team/team-building-field.jpg",
+      title: "Team building ngoài trời",
+      alt: "Đội nhóm SSI tham gia hoạt động team building ngoài trời"
+    },
+    {
+      image: "/assets/team/team-building-banner.jpg",
+      title: "Hoạt động gắn kết",
+      alt: "Đội nhóm SSI trong chương trình team building"
+    },
+    {
+      image: "/assets/team/team-awards-stage.jpg",
+      title: "Vinh danh đội nhóm",
+      alt: "Đội nhóm SSI tại chương trình vinh danh"
+    },
+    {
+      image: "/assets/team/team-office-celebration.jpg",
+      title: "Sinh hoạt tại văn phòng",
+      alt: "Đội nhóm SSI trong hoạt động tại văn phòng"
+    },
+    {
+      image: "/assets/team/team-night-outing.jpg",
+      title: "Kết nối sau giờ làm",
+      alt: "Đội nhóm SSI trong hoạt động kết nối sau giờ làm"
+    },
+    {
+      image: "/assets/team/team-night-bridge.jpg",
+      title: "Chuyến đi đội nhóm",
+      alt: "Đội nhóm SSI trong chuyến đi gắn kết"
+    },
+    {
+      image: "/assets/team/team-dinner.jpg",
+      title: "Bữa tối đội nhóm",
+      alt: "Đội nhóm SSI trong bữa tối kết nối"
+    },
+    {
+      image: "/assets/team/team-evening-group.jpg",
+      title: "Gặp gỡ sau giờ làm",
+      alt: "Đội nhóm SSI gặp gỡ sau giờ làm"
     }
   ],
 
@@ -130,10 +181,10 @@ export const landingContent = {
 
   achievements: [
     { year: "2016", title: "Gia nhập SSI", text: "Bắt đầu sự nghiệp tư vấn chứng khoán tại SSI Hội sở." },
-    { year: "2020", title: "Trưởng phòng Tư vấn", text: "Được bổ nhiệm vị trí Trưởng phòng Tư vấn Chứng khoán, bắt đầu xây dựng đội ngũ riêng." },
+    { year: "2019", title: "Trưởng phòng Tư vấn", text: "Được bổ nhiệm vị trí Trưởng phòng Tư vấn Chứng khoán, bắt đầu xây dựng đội ngũ riêng." },
     { year: "2024", title: "Retail Awards", text: "Được SSI vinh danh vì thành tích tăng trưởng vượt trội trong hoạt động tư vấn." },
-    { year: "2025", title: "KOL xuất sắc + ESOP", text: "Đạt danh hiệu KOL xuất sắc nhất năm — nhận cổ phiếu ESOP ghi nhận đóng góp. 150+ phiên livestream." },
-    { year: "2026", title: "Bổ nhiệm Giám đốc — Mở rộng đội ngũ", text: "Chính thức được bổ nhiệm Giám đốc Tư vấn Chứng khoán 09. Tiếp tục mở rộng phòng, tuyển dụng thế hệ tư vấn viên tiếp theo." }
+    { year: "2025", title: "KOL xuất sắc + ESOP + Người Tiêu Biểu SSI", text: "Đạt danh hiệu KOL xuất sắc nhất năm, nhận cổ phiếu ESOP ghi nhận đóng góp, 150+ phiên livestream và được SSI vinh danh Người Tiêu Biểu SSI 2025." },
+    { year: "2026", title: "Bổ nhiệm Giám Đốc — Mở rộng đội ngũ", text: "Chính thức được bổ nhiệm Giám Đốc Tư vấn đầu tư SSI. Tiếp tục mở rộng phòng, tuyển dụng thế hệ tư vấn viên tiếp theo." }
   ],
 
   training: [
@@ -155,7 +206,7 @@ export const landingContent = {
     },
     {
       question: "Thu nhập trung bình của tư vấn viên là bao nhiêu?",
-      answer: "Thu nhập đến từ hoa hồng môi giới + thưởng hiệu quả, không có trần. Người mới thường đạt 15-25 triệu/tháng sau 3-6 tháng. Người có kinh nghiệm và khách hàng ổn định có thể đạt 50-100 triệu/tháng hoặc hơn."
+      answer: "Thu nhập đến từ hoa hồng môi giới + thưởng hiệu quả. Người mới thường cần 1-2 năm để xây nền khách hàng và kỹ năng tư vấn. Người có kinh nghiệm, có tệp khách hàng ổn định thì thu nhập không giới hạn, thường từ 50 triệu/tháng trở lên."
     },
     {
       question: "Thời gian làm việc như thế nào?",

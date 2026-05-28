@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | Thùy Dương Invest"
   },
   description:
-    "Gia nhập đội ngũ chuyên gia hàng đầu Hội sở SSI. Giám đốc Tư vấn Chứng khoán 09 Trần Thị Thùy Dương tuyển dụng Tư vấn viên, Thực tập sinh, CTV, Leader. Đào tạo từ số 0, thu nhập không giới hạn.",
+    "Gia nhập đội ngũ chuyên gia hàng đầu Hội sở SSI. Giám Đốc Tư vấn đầu tư SSI Trần Thị Thùy Dương tuyển dụng Tư vấn viên, Thực tập sinh, CTV, Leader. Đào tạo từ số 0, thu nhập không giới hạn.",
   keywords: ["tuyển dụng SSI", "tư vấn chứng khoán", "việc làm chứng khoán", "SSI tuyển dụng", "Thùy Dương Invest", "môi giới chứng khoán"],
   authors: [{ name: "Thùy Dương Invest" }],
   robots: { index: true, follow: true },
@@ -66,7 +66,7 @@ export default function RootLayout({
               founder: {
                 "@type": "Person",
                 name: "Trần Thị Thùy Dương",
-                jobTitle: "Giám đốc Tư vấn Chứng khoán 09",
+                jobTitle: "Giám Đốc Tư vấn đầu tư SSI",
                 worksFor: { "@type": "Organization", name: "SSI Securities Corporation" }
               }
             })

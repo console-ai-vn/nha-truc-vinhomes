@@ -5,6 +5,7 @@ describe("getGoogleSheetsEnv", () => {
   beforeEach(() => {
     delete process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
     delete process.env.GOOGLE_PRIVATE_KEY_FILE;
+    delete process.env.GOOGLE_PRIVATE_KEY;
     delete process.env.GOOGLE_SHEET_ID;
   });
 
@@ -18,7 +19,7 @@ describe("getGoogleSheetsEnv", () => {
     process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL = "test@test.com";
     const env = getGoogleSheetsEnv();
     expect(env.configured).toBe(false);
-    expect(env.missing).toContain("privateKeyFile");
+    expect(env.missing).toContain("privateKey");
     expect(env.missing).toContain("sheetId");
   });
 

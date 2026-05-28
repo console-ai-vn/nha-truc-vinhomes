@@ -58,12 +58,12 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-grid">
           <div className="hero-copy">
-            <p className="hero-eyebrow">Giám đốc Tư vấn Chứng khoán 09 — Hội sở SSI</p>
+            <p className="hero-eyebrow">Giám Đốc Tư vấn đầu tư SSI — Hội sở SSI</p>
             <h1>{hero.headline}</h1>
             <p className="hero-lead">{hero.subheadline}</p>
             <div className="hero-badge">
               <Building2 size={22} />
-              <div><strong>Trần Thị Thùy Dương</strong><span>Giám đốc Tư vấn Chứng khoán 09 — SSI Hội sở</span></div>
+              <div><strong>Trần Thị Thùy Dương</strong><span>Giám Đốc Tư vấn đầu tư SSI — Hội sở SSI</span></div>
             </div>
             <div className="hero-cta">
               <a className="btn btn-primary" href="#apply">{hero.cta} <ArrowRight size={18} /></a>
@@ -111,7 +111,7 @@ export default function Home() {
         </div>
         <div style={{ maxWidth: "840px", margin: "0 auto" }}>
           {landingContent.achievements.map((a, i) => (
-            <div key={a.year} style={{ display: "flex", gap: 24, padding: "0 0 32px" }}>
+            <div key={`${a.year}-${a.title}`} style={{ display: "flex", gap: 24, padding: "0 0 32px" }}>
               <div style={{ flexShrink: 0, width: 64, textAlign: "right" }}>
                 <strong style={{ fontSize: 18, fontWeight: 800, color: "var(--red)" }}>{a.year}</strong>
               </div>
@@ -149,6 +149,23 @@ export default function Home() {
         <div className="opp-grid">
           {landingContent.benefits.map((b) => (
             <article className="opp-card" key={b.title}><h3>{b.title}</h3><p>{b.text}</p></article>
+          ))}
+        </div>
+      </section>
+
+      {/* Team activities */}
+      <section className="section team-bg">
+        <div className="section-head">
+          <p className="section-label">Hoạt động đội nhóm</p>
+          <h2>Môi trường có thật, đội nhóm có thật, hoạt động đều đặn</h2>
+          <p className="section-lead">Những khoảnh khắc đào tạo, vinh danh, team building và kết nối giúp ứng viên nhìn thấy văn hóa làm việc trước khi gia nhập.</p>
+        </div>
+        <div className="team-gallery">
+          {landingContent.teamGallery.map((item, index) => (
+            <article className="team-photo" key={item.image}>
+              <Image src={item.image} alt={item.alt} fill sizes="(max-width: 860px) 46vw, 25vw" />
+              <span>{item.title}</span>
+            </article>
           ))}
         </div>
       </section>
