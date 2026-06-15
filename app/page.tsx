@@ -1,25 +1,40 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import type { ComponentType } from "react";
 import {
-  ArrowRight, Award, BarChart3, BookOpenCheck,
-  BriefcaseBusiness, Building2, ExternalLink,
-  GraduationCap, MessageCircle, Network,
-  ShieldCheck, Sparkles, Star, TrendingUp, Users
+  ArrowRight,
+  Award,
+  BarChart3,
+  BookOpenCheck,
+  Building2,
+  ExternalLink,
+  Mail,
+  MessageCircle,
+  Phone,
+  ShieldCheck,
+  Sparkles,
+  Star,
+  TrendingUp,
+  Users
 } from "lucide-react";
 import Image from "next/image";
 import { FooterLinks } from "@/src/components/landing/FooterLinks";
 import { LeadForm } from "@/src/components/landing/LeadForm";
 import { landingContent } from "@/src/content/landing";
 
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  BriefcaseBusiness, GraduationCap, Network, Award
+const iconMap: Record<string, ComponentType<{ className?: string }>> = {
+  Building2,
+  BriefcaseBusiness: BarChart3,
+  GraduationCap: BookOpenCheck,
+  Award
 };
 
 export default function Home() {
   const { links, hero } = landingContent;
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
     const cb = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", cb, { passive: true });
@@ -28,42 +43,56 @@ export default function Home() {
 
   return (
     <main>
-      {/* Nav */}
       <nav className={`nav${scrolled ? " scrolled" : ""}`} aria-label="Chính">
         <a className="brand" href="#top">
-          <Image src="/assets/brand/logo.svg" alt="Thùy Dương Invest" width={182} height={40} />
+          <span className="brand-mark">NT</span>
+          <span>Nhã Trúc Vinhomes</span>
         </a>
         <div className="nav-links">
-          <a href="#authority">Uy tín</a>
-          <a href="#why">Lợi ích</a>
-          <a href="#opportunity">Vị trí</a>
+          <a href="#authority">Thành tích</a>
+          <a href="#opportunity">Tuyển dụng</a>
+          <a href="#why">Đào tạo</a>
           <a href="#faq">FAQ</a>
-          <a href="#apply" className="nav-cta">Ứng tuyển</a>
+          <a href="#apply" className="nav-cta">Kết nối</a>
         </div>
         <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu" aria-expanded={menuOpen}>
-          <span /><span /><span />
+          <span />
+          <span />
+          <span />
         </button>
         {menuOpen && (
           <div className="mobile-menu">
-            <a href="#authority" onClick={() => setMenuOpen(false)}>Uy tín</a>
-            <a href="#why" onClick={() => setMenuOpen(false)}>Lợi ích</a>
-            <a href="#opportunity" onClick={() => setMenuOpen(false)}>Vị trí</a>
+            <a href="#authority" onClick={() => setMenuOpen(false)}>Thành tích</a>
+            <a href="#opportunity" onClick={() => setMenuOpen(false)}>Tuyển dụng</a>
+            <a href="#why" onClick={() => setMenuOpen(false)}>Đào tạo</a>
             <a href="#faq" onClick={() => setMenuOpen(false)}>FAQ</a>
-            <a href="#apply" onClick={() => setMenuOpen(false)} className="nav-cta">Ứng tuyển</a>
+            <a href="#apply" onClick={() => setMenuOpen(false)} className="nav-cta">Kết nối</a>
           </div>
         )}
       </nav>
 
-      {/* Hero */}
       <section className="hero" id="top">
         <div className="hero-grid">
           <div className="hero-copy">
-            <p className="hero-eyebrow">Giám Đốc Tư vấn đầu tư SSI — Hội sở SSI</p>
+            <p className="hero-eyebrow">Tuyển dụng CVKD/CTV Vinhomes</p>
             <h1>{hero.headline}</h1>
             <p className="hero-lead">{hero.subheadline}</p>
+            <div className="hero-dossier" aria-label="Tóm tắt cơ hội tuyển dụng">
+              <div>
+                <span>Đang tuyển</span>
+                <strong>CVKD / CTV Vinhomes</strong>
+              </div>
+              <div>
+                <span>Thu nhập</span>
+                <strong>Trao đổi rõ cơ cấu hoa hồng khi phỏng vấn</strong>
+              </div>
+            </div>
             <div className="hero-badge">
               <Building2 size={22} />
-              <div><strong>Trần Thị Thùy Dương</strong><span>Giám Đốc Tư vấn đầu tư SSI — Hội sở SSI</span></div>
+              <div>
+                <strong>Huỳnh Thanh Nhã Trúc</strong>
+                <span>Trưởng phòng Kinh doanh Vinhomes</span>
+              </div>
             </div>
             <div className="hero-cta">
               <a className="btn btn-primary" href="#apply">{hero.cta} <ArrowRight size={18} /></a>
@@ -72,96 +101,102 @@ export default function Home() {
           </div>
           <div className="hero-image-wrap">
             <div className="hero-image-frame">
-              <Image src="/assets/selected/hero-portrait.png" alt={hero.portraitAlt} fill priority sizes="(max-width: 860px) 92vw, 440px" />
+              <Image src="/assets/selected/nha-truc-hero-palace-2026.jpg" alt={hero.portraitAlt} fill priority sizes="(max-width: 860px) 92vw, 440px" />
             </div>
             <div className="hero-accolade"><Star size={20} /><span>{hero.badge}</span></div>
+            <div className="hero-proof-note">
+              <span>Thành tích ghi nhận</span>
+              <strong>Top 3 Trưởng phòng Kinh doanh 2025</strong>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Stats + Authority */}
       <section className="stats-strip" aria-label="Chỉ số uy tín">
         {landingContent.stats.map((item) => (
-          <div className="stat-item" key={item.label}><strong className="stat-value">{item.value}</strong><span className="stat-label">{item.label}</span></div>
+          <div className="stat-item" key={item.label}>
+            <strong className="stat-value">{item.value}</strong>
+            <span className="stat-label">{item.label}</span>
+          </div>
         ))}
       </section>
 
-      {/* Proof + Certifications — moved up, right after hero */}
       <section className="section proof-bg" id="authority">
         <div className="section-head">
-          <p className="section-label">Uy tín & Chứng chỉ</p>
-          <h2>Một trong những Giám đốc Tư vấn có thành tích hàng đầu SSI Hội sở</h2>
-          <p className="section-lead">Chứng chỉ hành nghề chính thức — Thành tích được SSI ghi nhận — Đội ngũ liên tục đạt Top đầu toàn hệ thống.</p>
+          <p className="section-label">Thành tích tại Vinhomes</p>
+          <p className="section-lead">
+            Trước khi vào đội, xem người dẫn mình đã làm gì.
+          </p>
         </div>
         <div className="proof-grid">
           {landingContent.proofs.map((proof) => (
             <article className="proof-card" key={proof.title}>
-              <div className="proof-image"><Image src={proof.image} alt={proof.alt} fill sizes="(max-width: 860px) 94vw, 31vw" /></div>
-              <div className="proof-body"><h3>{proof.title}</h3><p>{proof.text}</p></div>
+              <div className="proof-image">
+                <Image src={proof.image} alt={proof.alt} fill sizes="(max-width: 860px) 94vw, 31vw" />
+              </div>
+              <div className="proof-body">
+                <h3>{proof.title}</h3>
+                <p>{proof.text}</p>
+              </div>
             </article>
           ))}
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="section" style={{ background: "#fff" }}>
+      <section className="section timeline-section">
         <div className="section-head">
           <p className="section-label">Hành trình</p>
-          <h2>10 năm — từ Tư vấn viên đến Giám đốc SSI</h2>
+          <h2>Từ giao dịch thật đến đội ngũ Vinhomes phía Nam</h2>
         </div>
-        <div style={{ maxWidth: "840px", margin: "0 auto" }}>
+        <div className="timeline-list">
           {landingContent.achievements.map((a, i) => (
-            <div key={`${a.year}-${a.title}`} style={{ display: "flex", gap: 24, padding: "0 0 32px" }}>
-              <div style={{ flexShrink: 0, width: 64, textAlign: "right" }}>
-                <strong style={{ fontSize: 18, fontWeight: 800, color: "var(--red)" }}>{a.year}</strong>
+            <div className="timeline-item" key={`${a.year}-${a.title}`}>
+              <div className="timeline-year">{a.year}</div>
+              <div className={`timeline-line${i === landingContent.achievements.length - 1 ? " last" : ""}`}>
+                <span />
               </div>
-              <div style={{ width: 2, flexShrink: 0, background: i < 4 ? "var(--red)" : "var(--border-light)", position: "relative" }}>
-                <div style={{ width: 12, height: 12, borderRadius: "50%", background: "var(--red)", position: "absolute", top: 6, left: -5 }} />
-              </div>
-              <div style={{ paddingTop: 2 }}>
-                <h3 style={{ fontSize: 18, margin: "0 0 4px", fontWeight: 700 }}>{a.title}</h3>
-                <p style={{ color: "var(--muted)", fontSize: 15, lineHeight: 1.6, margin: 0 }}>{a.text}</p>
+              <div className="timeline-content">
+                <h3>{a.title}</h3>
+                <p>{a.text}</p>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Investor Funnel CTA */}
-      <section style={{ background: "linear-gradient(135deg, #1a1416 0%, #2d2024 100%)", padding: "28px var(--space-x)", textAlign: "center" }}>
-        <div style={{ maxWidth: "var(--max-w)", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "center", gap: 24, flexWrap: "wrap" }}>
-          <p style={{ color: "#fff", margin: 0, fontSize: 17, fontWeight: 500 }}>
-            <TrendingUp size={20} style={{ marginRight: 8, verticalAlign: -4 }} />
-            Bạn là <strong>nhà đầu tư</strong>? Nhận bộ tài liệu + tư vấn miễn phí
+      <section className="project-band">
+        <div className="project-band-inner">
+          <p>
+            <TrendingUp size={20} />
+            Theo sát các dự án: <strong>Vinhomes Grand Park</strong>, <strong>The Beverly</strong>, <strong>The Opus One</strong>, <strong>Green Paradise Cần Giờ</strong>, <strong>Long An</strong>, <strong>Saigon Park</strong>
           </p>
-          <a href="/funnel" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "10px 24px", borderRadius: "var(--radius-md)", background: "var(--gold)", color: "#fff", fontWeight: 700, fontSize: 15, textDecoration: "none" }}>
-            Khám phá ngay <ArrowRight size={16} />
-          </a>
+          <a href="#apply">Xem vị trí đang tuyển <ArrowRight size={16} /></a>
         </div>
       </section>
 
-      {/* Benefits = "Tại sao nên tham gia" */}
       <section className="section" id="why">
         <div className="section-head">
-          <p className="section-label">Lợi ích khi tham gia</p>
-          <h2>Bạn nhận được gì khi gia nhập đội ngũ Thùy Dương?</h2>
+          <p className="section-label">Đào tạo và hệ thống</p>
+          <h2>Vào đội - học sản phẩm, nắm quy trình, biết cách bám khách</h2>
         </div>
         <div className="opp-grid">
           {landingContent.benefits.map((b) => (
-            <article className="opp-card" key={b.title}><h3>{b.title}</h3><p>{b.text}</p></article>
+            <article className="opp-card" key={b.title}>
+              <h3>{b.title}</h3>
+              <p>{b.text}</p>
+            </article>
           ))}
         </div>
       </section>
 
-      {/* Team activities */}
       <section className="section team-bg">
         <div className="section-head">
-          <p className="section-label">Hoạt động đội nhóm</p>
-          <h2>Môi trường có thật, đội nhóm có thật, hoạt động đều đặn</h2>
-          <p className="section-lead">Những khoảnh khắc đào tạo, vinh danh, team building và kết nối giúp ứng viên nhìn thấy văn hóa làm việc trước khi gia nhập.</p>
+          <p className="section-label">Môi trường làm việc thực tế</p>
+          <h2>Nhìn vào phòng kinh doanh trước khi quyết định</h2>
+          <p className="section-lead">Văn phòng, đào tạo, sự kiện dự án, team building - đây là môi trường bạn sẽ vào.</p>
         </div>
         <div className="team-gallery">
-          {landingContent.teamGallery.map((item, index) => (
+          {landingContent.teamGallery.map((item) => (
             <article className="team-photo" key={item.image}>
               <Image src={item.image} alt={item.alt} fill sizes="(max-width: 860px) 46vw, 25vw" />
               <span>{item.title}</span>
@@ -170,13 +205,60 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Training */}
+      <section className="section social-proof-section">
+        <div className="section-head">
+          <p className="section-label">Team & khách hàng</p>
+          <h2>Người trong đội, khách hàng đã mua và giao dịch đã chốt</h2>
+          <p className="section-lead">
+            Đây là người trong đội, khách hàng đã mua và giao dịch đã chốt. Xem rồi quyết định.
+          </p>
+        </div>
+        <div className="social-proof-grid">
+          {landingContent.socialProofs.map((item) => (
+            <article className="social-proof-card" key={item.title}>
+              <div className="social-proof-photo">
+                <Image src={item.image} alt={item.alt} fill sizes="(max-width: 860px) 94vw, 33vw" />
+              </div>
+              <div className="social-proof-copy">
+                <span>{item.label}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section team-testimonial-section">
+        <div className="section-head">
+          <p className="section-label">Ghi nhận từ đội</p>
+          <h2>Không chỉ trưởng phòng có thành tích</h2>
+        </div>
+        <div className="team-testimonial-grid">
+          {landingContent.teamTestimonials.map((item) => (
+            <article className="team-testimonial-card" key={item.name}>
+              <div className="team-testimonial-image" data-person={item.name}>
+                <Image src={item.image} alt={item.alt} fill sizes="(max-width: 860px) 92vw, 25vw" />
+              </div>
+              <div className="team-testimonial-copy">
+                <span>{item.meta}</span>
+                <p>&ldquo;{item.quote}&rdquo;</p>
+                <strong>{item.name}</strong>
+                <small>{item.role}</small>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="section proof-bg">
         <div className="training-grid">
-          <div className="training-image"><Image src="/assets/selected/training-team-ai-2025.jpg" alt="SSI AI Powered Training group" fill sizes="(max-width: 860px) 96vw, 50vw" /></div>
+          <div className="training-image">
+            <Image src="/assets/selected/nha-truc-training-green-city-work-2026.jpg" alt="Nhã Trúc tại khu trưng bày dự án Vinhomes phía Nam" fill sizes="(max-width: 860px) 96vw, 50vw" />
+          </div>
           <div>
-            <p className="section-label">Lộ trình đào tạo</p>
-            <h2>Không cần kinh nghiệm — Chúng tôi đào tạo từ số 0</h2>
+            <p className="section-label">Lộ trình đồng hành</p>
+            <h2>Đi cùng từ sản phẩm, bảng giá, booking đến bàn giao</h2>
             <ul className="training-list">
               {landingContent.training.map((item) => (
                 <li key={item}>
@@ -189,58 +271,81 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Roles = "Vị trí nào phù hợp với bạn" */}
       <section className="section opp-bg" id="opportunity">
         <div className="section-head">
-          <p className="section-label">Vị trí tuyển dụng</p>
-          <h2>4 vị trí — Từ chưa có kinh nghiệm đến Leader</h2>
+          <p className="section-label">Tuyển dụng trước</p>
+          <h2>Bạn đang ở đâu trong hành trình này?</h2>
+          <p className="section-lead">Ưu tiên người từng làm sales, tài chính, bảo hiểm, ngân hàng hoặc BĐS. Khách mua ở/đầu tư vẫn có thể để lại nhu cầu ở form bên dưới.</p>
         </div>
         <div className="opp-grid">
           {landingContent.roles.map((role) => {
             const Icon = iconMap[role.icon.name ?? ""] ?? Award;
-            return (<article className="opp-card" key={role.title}><Icon /><h3>{role.title}</h3><p>{role.text}</p></article>);
+            return (
+              <article className="opp-card" key={role.title}>
+                <Icon />
+                <h3>{role.title}</h3>
+                <p>{role.text}</p>
+              </article>
+            );
           })}
         </div>
       </section>
 
-      {/* FAQ */}
       <section className="section proof-bg" id="faq">
         <div className="section-head">
           <p className="section-label">Giải đáp</p>
           <h2>Câu hỏi thường gặp</h2>
         </div>
-        <div style={{ maxWidth: "780px", margin: "0 auto", display: "grid", gap: "12px" }}>
+        <div className="faq-list">
           {landingContent.faq.map((item) => (
-            <details key={item.question} className="faq-item"><summary>{item.question}</summary><p>{item.answer}</p></details>
+            <details key={item.question} className="faq-item">
+              <summary>{item.question}</summary>
+              <p>{item.answer}</p>
+            </details>
           ))}
         </div>
       </section>
 
-      {/* Form = CTA cuối */}
       <section className="section" id="apply">
         <div className="form-grid">
           <div>
-            <p className="section-label">Sẵn sàng thay đổi?</p>
-            <h2>Điền thông tin — Nhận lộ trình trong 24h</h2>
-            <p className="section-lead">Không cần kinh nghiệm. Không áp lực. Đội ngũ chị Thùy Dương sẽ gọi trao đổi trực tiếp.</p>
+            <p className="section-label">Kết nối tuyển dụng Vinhomes</p>
+            <h2>Để lại thông tin — Nhã Trúc liên hệ lại qua Zalo</h2>
+            <p className="section-lead">
+              Điền vào đây, ghi rõ bạn muốn ứng tuyển hay hỏi về dự án. Nếu phù hợp, sẽ hẹn trao đổi trực tiếp - không phải qua form mãi.
+            </p>
             <div className="form-trust">
-              <p><ShieldCheck size={18} /> Thông tin chỉ dùng cho tuyển dụng</p>
-              <p><Sparkles size={18} /> Không cam kết lợi nhuận đầu tư</p>
+              <p><ShieldCheck size={18} /> Thông tin chỉ dùng để kết nối tuyển dụng hoặc tư vấn dự án</p>
+              <p><Sparkles size={18} /> Hoa hồng và chính sách dự án trao đổi theo từng thời điểm</p>
+            </div>
+            <div className="apply-brief">
+              <div className="apply-brief-head">
+                <Award size={20} />
+                <strong>Bạn có phù hợp không?</strong>
+              </div>
+              <ul>
+                <li>Đã từng làm sales — ngành gì cũng được.</li>
+                <li>Chịu học bảng giá, chịu đi thực địa, chịu gọi khách.</li>
+                <li>Quen với việc theo khách dài ngày - không bỏ giữa chừng.</li>
+                <li>Muốn có người dẫn thật, không phải tự mò.</li>
+              </ul>
             </div>
           </div>
           <LeadForm />
         </div>
       </section>
 
-      {/* Links */}
       <section className="links-section">
         <div className="links-grid-inner">
-          <div><p className="section-label">Kết nối</p><h2>Theo dõi Thùy Dương Invest</h2></div>
+          <div>
+            <p className="section-label">Liên hệ trực tiếp</p>
+            <h2>Trao đổi nhanh qua Zalo, điện thoại hoặc Facebook</h2>
+          </div>
           <div className="links-cards">
-            <a href={links.openAccount} target="_blank" rel="noreferrer"><BarChart3 size={20} /> Mở TK SSI <ExternalLink size={14} /></a>
-            <a href={links.zaloRoom} target="_blank" rel="noreferrer"><MessageCircle size={20} /> Zalo room <ExternalLink size={14} /></a>
-            <a href={links.tiktok} target="_blank" rel="noreferrer"><BookOpenCheck size={20} /> TikTok <ExternalLink size={14} /></a>
-            <a href={links.facebook} target="_blank" rel="noreferrer"><Users size={20} /> Facebook <ExternalLink size={14} /></a>
+            <a href={links.zaloRoom} target="_blank" rel="noreferrer"><MessageCircle size={20} /> Nhắn Zalo trực tiếp <ExternalLink size={14} /></a>
+            <a href={`tel:${links.phone}`}><Phone size={20} /> Gọi 0947 939 224</a>
+            <a href={`mailto:${links.email}`}><Mail size={20} /> Gửi email</a>
+            <a href={links.facebook} target="_blank" rel="noreferrer"><Users size={20} /> Facebook Nhã Trúc <ExternalLink size={14} /></a>
           </div>
         </div>
       </section>
@@ -248,7 +353,7 @@ export default function Home() {
       <FooterLinks />
 
       <div className="sticky-cta" aria-hidden="true">
-        <a className="btn btn-primary" href="#apply">Ứng tuyển ngay <ArrowRight size={18} /></a>
+        <a className="btn btn-primary" href="#apply">Kết nối ngay <ArrowRight size={18} /></a>
       </div>
     </main>
   );

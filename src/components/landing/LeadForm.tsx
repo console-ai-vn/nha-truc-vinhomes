@@ -36,11 +36,11 @@ export function LeadForm() {
       experienceLevel: String(data.get("experienceLevel") || ""),
       socialLink: String(data.get("socialLink") || ""),
       note: String(data.get("note") || ""),
-      source: "landing",
+      source: "nha-truc-vinhomes-landing",
       utmCampaign: getUtmCampaign()
     };
 
-    setState({ status: "loading", message: "Đang gửi thông tin..." });
+    setState({ status: "loading", message: "Đang gửi thông tin cho đội Nhã Trúc..." });
 
     const headers: Record<string, string> = { "Content-Type": "application/json" };
     if (csrfRef.current) {
@@ -84,12 +84,16 @@ export function LeadForm() {
     form.reset();
     setState({
       status: "success",
-      message: "Đã nhận thông tin. Đội ngũ sẽ liên hệ qua Zalo/email để trao đổi bước tiếp theo."
+      message: "Đã nhận thông tin. Nhã Trúc sẽ phản hồi qua Zalo/điện thoại nếu phù hợp lịch trao đổi."
     });
   }, []);
 
   return (
     <form className="lead-form" onSubmit={submitLead}>
+      <div className="form-tabs" aria-label="Nhóm nhu cầu">
+        <button type="button" className="active">Ứng tuyển</button>
+        <button type="button">Mua ở / đầu tư</button>
+      </div>
       <div className="field-row">
         <div className="form-field">
           <label htmlFor="fullName">Họ tên</label>
@@ -104,36 +108,36 @@ export function LeadForm() {
           <input id="email" name="email" type="email" autoComplete="email" required />
         </div>
         <div className="form-field">
-          <label htmlFor="roleInterest">Vị trí quan tâm</label>
+          <label htmlFor="roleInterest">Nhu cầu quan tâm</label>
           <select id="roleInterest" name="roleInterest" required defaultValue="">
-            <option value="" disabled>Chọn vị trí</option>
-            <option>Tư vấn chứng khoán</option>
-            <option>Học việc / Thực tập sinh</option>
-            <option>CTV / Đội ngũ liên kết</option>
-            <option>Định hướng Leader</option>
+            <option value="" disabled>Chọn mục tiêu của bạn</option>
+            <option>Ứng tuyển CVKD Vinhomes</option>
+            <option>Hợp tác CTV Vinhomes</option>
+            <option>Đã có kinh nghiệm sales/BĐS - muốn vào đội</option>
+            <option>Muốn mua ở / đầu tư Vinhomes</option>
           </select>
         </div>
         <div className="form-field">
           <label htmlFor="experienceLevel">Kinh nghiệm hiện tại</label>
           <select id="experienceLevel" name="experienceLevel" defaultValue="">
-            <option value="">Chọn nếu phù hợp</option>
-            <option>Chưa có kinh nghiệm</option>
+            <option value="">Chọn gần đúng nhất</option>
+            <option>Chưa có kinh nghiệm BĐS</option>
             <option>Đã làm sales</option>
-            <option>Đã làm tài chính/chứng khoán</option>
+            <option>Đã làm bất động sản</option>
             <option>Đã có team/CTV</option>
           </select>
         </div>
         <div className="form-field">
-          <label htmlFor="socialLink">Facebook/TikTok</label>
+          <label htmlFor="socialLink">Facebook/Zalo/TikTok</label>
           <input id="socialLink" name="socialLink" placeholder="Link profile nếu có" />
         </div>
         <div className="form-field full">
           <label htmlFor="note">Ghi chú ngắn</label>
-          <textarea id="note" name="note" placeholder="Mục tiêu, thời gian bắt đầu, câu hỏi..." />
+          <textarea id="note" name="note" placeholder="Bạn muốn ứng tuyển hay hợp tác? Đã từng làm sales gì, khi nào bắt đầu được, khu vực quan tâm..." />
         </div>
       </div>
       <button className="form-btn" type="submit" disabled={state.status === "loading"}>
-        Gửi thông tin ứng tuyển <Send size={18} />
+        Gửi thông tin cho Nhã Trúc <Send size={18} />
       </button>
       <p className={`form-msg${state.status === "error" ? " error" : ""}${state.status === "success" ? " success" : ""}`}>
         {state.message}

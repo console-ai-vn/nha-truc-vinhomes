@@ -54,18 +54,18 @@ export async function POST(request: NextRequest) {
       fullName: String(fullName || ""),
       email: String(email || ""),
       phoneZalo: String(phoneZalo || ""),
-      roleInterest: "Nhà đầu tư",
-      experienceLevel: interest || "Tài liệu miễn phí",
+      roleInterest: "Kết nối Nhã Trúc Vinhomes",
+      experienceLevel: String(interest || "Ứng tuyển / tư vấn dự án"),
       socialLink: "",
-      source: "funnel",
+      source: "nha-truc-vinhomes-funnel",
       utmCampaign: "",
       note: ""
     });
 
     return NextResponse.json({
       ok: true,
-      message: "Tài liệu đã được gửi! Kiểm tra email và Zalo của bạn.",
-      resourceUrl: "https://zalo.me/g/pmlijy761"
+      message: "Đã nhận thông tin. Nhã Trúc hoặc đội ngũ sẽ liên hệ lại qua Zalo/email.",
+      resourceUrl: "https://zalo.me/0947939224"
     });
   } catch {
     return NextResponse.json(

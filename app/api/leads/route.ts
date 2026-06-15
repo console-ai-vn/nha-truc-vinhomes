@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
     try {
       body = await request.json();
     } catch {
-      // leave as {}
+      // Keep empty object and let schema validation handle it.
     }
 
     const parsed = leadSchema.safeParse(body);

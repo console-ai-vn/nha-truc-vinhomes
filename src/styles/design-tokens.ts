@@ -1,37 +1,39 @@
 export const designTokens = {
   colors: {
-    canvas: "#fff7f7",
+    canvas: "#ffffff",
     surface: "#ffffff",
-    surfaceSoft: "#fff0f4",
-    ink: "#171114",
-    muted: "#6d5c62",
-    line: "#ead8dc",
-    ssiRed: "#d71920",
-    ssiRedDark: "#8e0f17",
-    blush: "#f6c4d5",
-    charcoal: "#241a1d",
-    gold: "#b9842d",
+    surfaceSoft: "#f0f4f8",
+    pearl: "#f8f6f0",
+    ink: "#152c4a",
+    muted: "#7b8a9e",
+    line: "#e2e8f0",
+    vinhomesNavy: "#1e3a5f",
+    vinhomesNavyDark: "#0f2035",
+    vinhomesBlue: "#2b5089",
+    gold: "#c9a24c",
+    goldLight: "#dbba6a",
     success: "#176b3a"
   },
   radius: {
-    sm: "6px",
+    sm: "4px",
     md: "8px",
     lg: "12px"
   },
   shadow: {
-    media: "0 24px 80px rgba(74, 23, 34, 0.14)",
-    card: "0 18px 50px rgba(84, 30, 44, 0.08)",
-    cta: "0 14px 38px rgba(215, 25, 32, 0.28)"
+    media: "0 30px 90px rgba(15, 32, 53, 0.16)",
+    card: "0 14px 42px rgba(15, 32, 53, 0.08)",
+    cta: "0 16px 40px rgba(30, 58, 95, 0.24)"
   },
   typography: {
-    fontSans: "Arial, Helvetica, sans-serif",
-    hero: "clamp(42px, 7vw, 86px)",
-    sectionTitle: "clamp(32px, 5vw, 56px)",
+    fontSans: "Be Vietnam Pro, system-ui, sans-serif",
+    fontDisplay: "Playfair Display, Georgia, serif",
+    hero: "clamp(42px, 5vw, 74px)",
+    sectionTitle: "clamp(34px, 4.8vw, 56px)",
     body: "18px"
   },
   spacing: {
-    pageX: "clamp(18px, 4vw, 64px)",
-    sectionY: "clamp(64px, 9vw, 110px)",
-    gridGap: "clamp(28px, 6vw, 78px)"
+    pageX: "clamp(20px, 5vw, 80px)",
+    sectionY: "clamp(76px, 12vh, 128px)",
+    gridGap: "clamp(40px, 8vw, 90px)"
   }
 } as const;

@@ -1,7 +1,8 @@
 {
-  "name": "thuy-duong-ssi-landing",
+  "name": "nha-truc-vinhomes-landing",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@11.5.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
